@@ -13,9 +13,9 @@ $this->title = 'My Yii Application';
 		<a href="#" class="profile-link">
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
-		<a href="<?= $profile->profile["job"]["url"]; ?>" class="job-link">
-		    <img src="<?= $profile->profile["job"]["avatar"]; ?>?seed=<?= rand(); ?>" alt="<?= $profile->profile["job"]["workspace"]; ?>" class="job-avatar" />
-	            <span class="more-button"><?= $profile->profile["job"]["workspace"]; ?></span>	
+		<a href="<?= $profile->job->url; ?>" class="job-link">
+		    <img src="<?= $profile->job->avatar; ?>" alt="<?= $profile->job->workspace; ?>" class="job-avatar" />
+	            <span class="more-button"><?= $profile->job->workspace; ?></span>	
                 </a>
             </div>
             <div id="profile-description" class="col-lg-10">
@@ -33,10 +33,10 @@ $this->title = 'My Yii Application';
 		    <tr>
 		        <td class="profile-row">Контакты:</td>
 			<td>
-			<?php if (count($profile->profile["contacts"])) { ?>
+			<?php if (count($profile->contacts)) { ?>
 			<ul>
-			<?php foreach ($profile->profile["contacts"] as $contact) { ?>
-			<li><img src="http://lorempixel.com/24/24?seed=<?= rand(); ?>" title="<?= $contact["contact_type"]; ?>" /><?= $contact["value"]; ?></li>
+			<?php foreach ($profile->contacts as $contact) { ?>
+			<li><img src="<?= $contact->image; ?>" /><?= $contact->value; ?></li>
 			<?php } ?>
 			</ul>
 			<?php } ?>
@@ -44,11 +44,11 @@ $this->title = 'My Yii Application';
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Должность:</td>
-			<td><?php print_r($profile->profile["job"]["position"]); ?></td>
+			<td><?= $profile->job->position; ?></td>
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Рабочие обязанности:</td>
-			<td><?php print_r($profile->profile["job"]["responsibilities"]); ?></td>
+			<td><?= $profile->job->responsibilities; ?></td>
 		    </tr>
 		</table>
             </div>

@@ -4,10 +4,12 @@ namespace app\models;
 
 class Profile extends \yii\base\Object
 {
-    public $id;
     public $firstname;
     public $middlename;
     public $lastname;
+
+    private $_contacts;
+    private $_job;
 
     public $profile;
     private static $profiles = [
@@ -18,12 +20,14 @@ class Profile extends \yii\base\Object
 	    'lastname' => 'Маргарин',
 	    'hobby' => 'Болеть за зертак, отмечать новый год в Кушевеле, читать Кафку.',
 	    'education' => 'Неполное высшее экономическое образование.',
+	    'image' => "150/150",
+	    /*
 	    'contacts' => [
 		['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
 		['contact_type' => 'phone', 'value' => '89072415396',            ],
 		['contact_type' => 'skype', 'value' => 'marg_240',               ],
 	    ],
-	    'image' => "150/150",
+
 	    'job' => [
 		'avatar' => "http://lorempixel.com/150/150",
 		"url" => "#",
@@ -31,6 +35,7 @@ class Profile extends \yii\base\Object
 		'position' => "Менеджер по теплым звонкам",
 	    	'responsibilities' => "Увеличивать количество клиентов на девятом этапе воронки продаж",
 	    ],
+	    */
 	    'bages' => [
 		[
 		    'image' => "http://lorempixel.com/150/150/",
@@ -92,7 +97,7 @@ class Profile extends \yii\base\Object
      */
     public function getId()
     {
-        return $this->id;
+        return $this->profile["id"];
     }
 
     /**
@@ -119,6 +124,34 @@ class Profile extends \yii\base\Object
 	return $avatar;
     }
 
+    /**
+     * Loads contacts
+     *
+     * @return array
+     */
+    public function getContacts()
+    {
+	if(!isset($this->_contacts))
+	{
+	    $this->_contacts = Contact::findByProfileId($this->id);
+	}
+	return $this->_contacts;
+    }
+    
+    /**
+     * Loads job
+     *
+     * @return Job
+     */
+    public function getJob()
+    {
+	if(!isset($this->_job))
+	{
+	    $this->_job = Job::findByProfileId($this->id);
+	}
+	return $this->_job;
+    }
+    
     /**
      * Finds by User
      *
