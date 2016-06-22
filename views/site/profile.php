@@ -78,7 +78,7 @@ $this->title = 'My Yii Application';
             <div class="col-lg-8">
 		<div class="d2-box">
 		    <div class="head">
-                        <h2>Бейджи</h2>
+                        <h2>Уровень</h2>
                     </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -90,7 +90,7 @@ $this->title = 'My Yii Application';
                 </div>
 		<div class="d2-box">
 		    <div class="head">
-                        <h2>Бейджи</h2>
+                        <h2>Очки</h2>
                     </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
@@ -104,7 +104,7 @@ $this->title = 'My Yii Application';
             <div class="col-lg-4">
 		<div class="d2-box">
 		    <div class="head">
-                        <h2>Бейджи</h2>
+                        <h2>Статистика</h2>
                     </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
