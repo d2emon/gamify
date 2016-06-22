@@ -49,6 +49,18 @@ class Profile extends \yii\base\Object
 		    'text' => "Просто космос",
 		],
 	    ],
+	    'level' => [
+		'id' => 7,
+	        'image' => "http://lorempixel.com/40/40/",
+                "title" => "Warmaster",
+		'to_next' => [
+		    ['done' => False, 'task' => 'Сдать тест на знание библии.',],
+		    ['done' => False, 'task' => 'Сделать 7 успешных теплых звонков.',],
+		    ['done' => False, 'task' => 'Сделать прививку.',],
+		],
+	    ],
+	    'score' => 120,
+	    'shop' => '3 отпуска',
 
         ],
     ];

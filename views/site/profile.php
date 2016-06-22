@@ -75,44 +75,52 @@ $this->title = 'My Yii Application';
             </div>
     	</div>
         <div class="row">
-            <div class="col-lg-8">
+            <div class="col-lg-7" id="profile-level">
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Уровень</h2>
                     </div>
 		    <div class="row">
-            		<div class="col-lg-6">
-                  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                fugiat nulla pariatur.</p>
-                            <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+            		<div class="col-lg-6 level-columns">
+        		    <div class="row">
+            		        <div class="col-lg-3 level-image">
+				    <img src="<?= $profile->profile["level"]["image"]; ?>" />
+                                </div>
+            		        <div class="col-lg-9 level-name">
+				    <h2><?= $profile->profile["level"]["title"]; ?></h2>
+				    <span><a href="#">Смотреть систему уровней</a></span>
+                                </div>
+                            </div>
                         </div>
             		<div class="col-lg-6">
-                  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                                fugiat nulla pariatur.</p>
-                            <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+			    <h4>До следующего осталось:</h4>
+			    <?php if (count($profile->profile["level"]["to_next"])) { ?>
+                            <ul>
+			    <?php foreach ($profile->profile["level"]["to_next"] as $task) { ?>
+			    <li><?= $task["task"]; ?></li>
+			    <?php } ?>
+			    </ul>
+			    <?php } ?>
                         </div>
                     </div>
-		    
-
                 </div>
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Очки</h2>
+			<a href="#" id="bages" class="more-button more-float">Перейти в магазин</a>
                     </div>
-
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.</p>
-
-                    <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+		    <div class="row">
+            		<div id="scorebox" class="col-lg-4">
+			    <span class="score"><?= $profile->profile["score"]; ?></span>
+                        </div>
+			<div class="col-lg-8">
+                            <h5>На них можно купить:</h5>
+			    <a class="buy"><?= $profile->profile["shop"]; ?></a> <a href="#">O</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-4">
+            <div class="col-lg-5">
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Статистика</h2>
