@@ -9,7 +9,7 @@ $this->title = 'My Yii Application';
     <div class="body-content">
 
     	<div id="profile-summary" class="row">
-            <div class="col-lg-2">
+            <div id="profile-images" class="col-lg-2">
 		<a href="#" class="profile-link">
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
@@ -18,9 +18,9 @@ $this->title = 'My Yii Application';
 	            <span class="more-button"><?= $profile->profile["job"]["workspace"]; ?></span>	
                 </a>
             </div>
-            <div class="col-lg-10">
+            <div id="profile-description" class="col-lg-10">
                 <h3><?= $profile->fullname; ?></h3>
-		<a href="#" id="related-profiles" class="more-button">Профили коллег</a>
+		<a href="#" id="related-profiles" class="more-button more-float">Профили коллег</a>
 		<table>
 		    <tr>
 		        <td class="profile-row">Увлечение:</td>
@@ -80,13 +80,24 @@ $this->title = 'My Yii Application';
 		    <div class="head">
                         <h2>Уровень</h2>
                     </div>
+		    <div class="row">
+            		<div class="col-lg-6">
+                  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur.</p>
+                            <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                        </div>
+            		<div class="col-lg-6">
+                  	    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
+                                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                                fugiat nulla pariatur.</p>
+                            <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+                        </div>
+                    </div>
+		    
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.</p>
-
-                    <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
                 </div>
 		<div class="d2-box">
 		    <div class="head">
