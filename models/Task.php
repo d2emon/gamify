@@ -4,7 +4,7 @@ namespace app\models;
 
 class Task extends \yii\base\Object
 {
-    public $_task;
+    private $_task;
     private static $tasks = [
         ['done' => False, 'task' => 'Сдать тест на знание библии.',],
 	['done' => False, 'task' => 'Сделать 7 успешных теплых звонков.',],

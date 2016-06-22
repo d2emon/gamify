@@ -127,10 +127,10 @@ $this->title = 'My Yii Application';
                         <h2>Статистика</h2>
 			<a href="<?= Url::to(['site/stats']); ?>" id="bages" class="more-button more-float">Подробнее</a>
                     </div>
-		    <?php if (count($profile->profile["stats"])) { ?>
+		    <?php if (count($profile->stats)) { ?>
                     <ul>
-		    <?php foreach ($profile->profile["stats"] as $stat) { ?>
-		    <li><img src="<?= $stat["image"]; ?>" /> <?= $stat["value"]; ?> <?= $stat["text"]; ?></li>
+		    <?php foreach ($profile->stats as $stat) { ?>
+		    <li><img src="<?= $stat->image; ?>" /> <?= $stat->value; ?> <?= $stat->text; ?></li>
 		    <?php } ?>
 		    </ul>
 		    <?php } ?>

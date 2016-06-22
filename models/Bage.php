@@ -4,7 +4,7 @@ namespace app\models;
 
 class Bage extends \yii\base\Object
 {
-    public $_bage;
+    private $_bage;
     private static $bages = [
         '100' => [
 	    [

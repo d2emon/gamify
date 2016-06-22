@@ -12,6 +12,7 @@ class Profile extends \yii\base\Object
     private $_job;
     private $_bages;
     private $_score;
+    private $_stats;
 
     public $profile;
     private static $profiles = [
@@ -60,29 +61,9 @@ class Profile extends \yii\base\Object
 	    ],
 	    'level' => [
 	    ],
-	    */
 	    'stats' => [
-	        [
-		    'image' => "http:://lorempixel.com/36/36/",
-		    'value' => 121,
-		    'text' => 'теплых звонков',
-		],
-	        [
-		    'image' => "http:://lorempixel.com/36/36/",
-		    'value' => 63,
-		    'text' => 'привлеченных клиента',
-		],
-	        [
-		    'image' => "http:://lorempixel.com/36/36/",
-		    'value' => 3,
-		    'text' => 'отказа от печенек',
-		],
-	        [
-		    'image' => "http:://lorempixel.com/36/36/",
-		    'value' => 1315,
-		    'text' => 'дней проработано',
-		],
 	    ],
+	    */
 
         ],
     ];
@@ -131,6 +112,20 @@ class Profile extends \yii\base\Object
 	    $this->_contacts = Contact::findByProfileId($this->id);
 	}
 	return $this->_contacts;
+    }
+    
+    /**
+     * Loads stats
+     *
+     * @return array
+     */
+    public function getStats()
+    {
+	if(!isset($this->_stats))
+	{
+	    $this->_stats = Stat::findByProfileId($this->id);
+	}
+	return $this->_stats;
     }
     
     /**

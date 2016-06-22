@@ -4,7 +4,7 @@ namespace app\models;
 
 class Contact extends \yii\base\Object
 {
-    public $_contact;
+    private $_contact;
     private static $contacts = [
         '100' => [
 	    ['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
