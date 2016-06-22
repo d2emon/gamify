@@ -11,7 +11,7 @@ class Profile extends \yii\base\Object
     private $_contacts;
     private $_job;
     private $_bages;
-    private $_level;
+    private $_score;
 
     public $profile;
     private static $profiles = [
@@ -23,9 +23,10 @@ class Profile extends \yii\base\Object
 	    'hobby' => 'Болеть за зертак, отмечать новый год в Кушевеле, читать Кафку.',
 	    'education' => 'Неполное высшее экономическое образование.',
 	    'image' => "150/150",
+	    /*
 	    'score' => 120,
 	    'level' => 7,
-	    /*
+	    'shop' => '3 отпуска',
 	    'contacts' => [
 		['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
 		['contact_type' => 'phone', 'value' => '89072415396',            ],
@@ -60,7 +61,6 @@ class Profile extends \yii\base\Object
 	    'level' => [
 	    ],
 	    */
-	    'shop' => '3 отпуска',
 	    'stats' => [
 	        [
 		    'image' => "http:://lorempixel.com/36/36/",
@@ -148,17 +148,27 @@ class Profile extends \yii\base\Object
     }
     
     /**
+     * Loads score
+     *
+     * @return Score
+     */
+    public function getScore()
+    {
+	if(!isset($this->_score))
+	{
+	    $this->_score = Score::findByProfileId($this->id);
+	}
+	return $this->_score;
+    }
+    
+    /**
      * Loads level
      *
      * @return Level
      */
     public function getLevel()
     {
-	if(!isset($this->_level))
-	{
-	    $this->_level = Level::findById($this->profile['level']);
-	}
-	return $this->_level;
+	return $this->score->level;
     }
     
     /**

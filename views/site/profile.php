@@ -112,11 +112,11 @@ $this->title = 'My Yii Application';
                     </div>
 		    <div class="row">
             		<div id="scorebox" class="col-lg-4">
-			    <span class="score"><?= $profile->profile["score"]; ?></span>
+			    <span class="score"><?= $profile->score->score; ?></span>
                         </div>
 			<div class="col-lg-8">
                             <h5>На них можно купить:</h5>
-			    <a href="<?= Url::to(['site/buy', 'id' => 100]); ?>" class="buy"><?= $profile->profile["shop"]; ?></a> <a href="<?= Url::to(['site/shop-random']); ?>">O</a>
+			    <a href="<?= Url::to(['site/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->shop; ?></a> <a href="<?= Url::to(['site/shop-random']); ?>">O</a>
                         </div>
                     </div>
                 </div>
