@@ -17,6 +17,16 @@ class Job extends \yii\base\Object
     ];
 
     /**
+     * Returns id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+	return $this->_job["id"];
+    }
+
+    /**
      * Forms avatar
      *
      * @return string

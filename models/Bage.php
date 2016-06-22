@@ -8,23 +8,35 @@ class Bage extends \yii\base\Object
     private static $bages = [
         '100' => [
 	    [
+		'id' => 1,
 		'image' => "150/150/",
 		'text' => "Лучший чебурек недели",
 	    ],
 	    [
+		'id' => 2,
 		'image' => "150/150/",
 		'text' => "Почетный гвоздь",
 	    ],
 	    [
+		'id' => 3,
 		'image' => "150/150/",
 		'text' => "3 года в компании",
 	    ],
 	    [
+		'id' => 4,
 		'image' => "150/150/",
 		'text' => "Просто космос",
 	    ],
 	],
     ];
+
+    /**
+     * @inheritdoc
+     */
+    public function getId()
+    {
+        return $this->_bage["id"];
+    }
 
     /**
      * Returns text
