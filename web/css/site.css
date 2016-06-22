@@ -142,3 +142,9 @@ a.desc:after {
     text-align: center;
     text-transform: capitalize;
 }
+
+.profile-row {
+    width: 175px;
+    font-weight: bold;
+    vertical-align: top;
+}

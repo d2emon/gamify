@@ -19,16 +19,51 @@ $this->title = 'My Yii Application';
                 </a>
             </div>
             <div class="col-lg-10">
-                <h2><?= $profile->fullname; ?></h2>
+                <h3><?= $profile->fullname; ?></h3>
+		<a href="#">Профили коллег &gt;</a>
+		<table>
+		    <tr>
+		        <td class="profile-row">Увлечение:</td>
+			<td><?= $profile->profile["hobby"]; ?></td>
+		    </tr>
+		    <tr>
+		        <td class="profile-row">Образование:</td>
+			<td><?= $profile->profile["education"]; ?></td>
+		    </tr>
+		    <tr>
+		        <td class="profile-row">Контакты:</td>
+			<td>
+			<?php if (count($profile->profile["contacts"])) { ?>
+			<ul>
+			<?php foreach ($profile->profile["contacts"] as $contact) { ?>
+			<li><img src="http://lorempixel.com/24/24?seed=<?= rand(); ?>" title="<?= $contact["contact_type"]; ?>" /><?= $contact["value"]; ?></li>
+			<?php } ?>
+			</ul>
+			<?php } ?>
+			</td>
+		    </tr>
+		    <tr>
+		        <td class="profile-row">Должность:</td>
+			<td><?php print_r($profile->profile["job"]["position"]); ?></td>
+		    </tr>
+		    <tr>
+		        <td class="profile-row">Рабочие обязанности:</td>
+			<td><?php print_r($profile->profile["job"]["responsibilities"]); ?></td>
+		    </tr>
+		</table>
+            </div>
+    	</div>
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Heading</h2>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                     dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
                     ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
                     fugiat nulla pariatur.</p>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
+                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
             </div>
-		<?php print_r($profile); ?>
     	</div>
         <div class="row">
             <div class="col-lg-2">

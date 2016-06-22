@@ -17,7 +17,7 @@ class Profile extends \yii\base\Object
 	    'middlename' => 'Сергеевич',
 	    'lastname' => 'Маргарин',
 	    'hobby' => 'Болеть за зертак, отмечать новый год в Кушевеле, читать Кафку.',
-	    'educaton' => 'Неполное высшее экономическое образование.',
+	    'education' => 'Неполное высшее экономическое образование.',
 	    'contacts' => [
 		['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
 		['contact_type' => 'phone', 'value' => '89072415396',            ],
