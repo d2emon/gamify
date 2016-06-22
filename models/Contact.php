@@ -4,9 +4,7 @@ namespace app\models;
 
 class Contact extends \yii\base\Object
 {
-    public $contact_type_id;
-
-    public $contact;
+    public $_contact;
     private static $contacts = [
         '100' => [
 	    ['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
@@ -21,7 +19,7 @@ class Contact extends \yii\base\Object
      */
     public function getValue()
     {
-	return $this->contact["value"];
+	return $this->_contact["value"];
     }
 
     /**
@@ -62,7 +60,7 @@ class Contact extends \yii\base\Object
      */
     public function load($contact_data)
     {
-	$this->contact = $contact_data;
+	$this->_contact = $contact_data;
 	return $this;
     }
 }

@@ -10,6 +10,7 @@ class Profile extends \yii\base\Object
 
     private $_contacts;
     private $_job;
+    private $_bages;
 
     public $profile;
     private static $profiles = [
@@ -35,7 +36,6 @@ class Profile extends \yii\base\Object
 		'position' => "Менеджер по теплым звонкам",
 	    	'responsibilities' => "Увеличивать количество клиентов на девятом этапе воронки продаж",
 	    ],
-	    */
 	    'bages' => [
 		[
 		    'image' => "http://lorempixel.com/150/150/",
@@ -54,6 +54,7 @@ class Profile extends \yii\base\Object
 		    'text' => "Просто космос",
 		],
 	    ],
+	    */
 	    'level' => [
 		'id' => 7,
 	        'image' => "http://lorempixel.com/40/40/",
@@ -150,6 +151,20 @@ class Profile extends \yii\base\Object
 	    $this->_job = Job::findByProfileId($this->id);
 	}
 	return $this->_job;
+    }
+    
+    /**
+     * Loads bages
+     *
+     * @return array
+     */
+    public function getBages()
+    {
+	if(!isset($this->_bages))
+	{
+	    $this->_bages = Bage::findByProfileId($this->id);
+	}
+	return $this->_bages;
     }
     
     /**

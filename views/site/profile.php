@@ -61,12 +61,12 @@ $this->title = 'My Yii Application';
 			<a href="#" id="bages" class="more-button more-float">Смотреть все достижения</a>
                     </div>
 
-		    <?php if (count($profile->profile["bages"])) { ?>
+		    <?php if (count($profile->bages)) { ?>
 		    <ul class="bages">
-		        <?php foreach ($profile->profile["bages"] as $bage) { ?>
+		        <?php foreach ($profile->bages as $bage) { ?>
 			<li>
-			    <a href="#"><img src="<?= $bage["image"]; ?>" />
-			    <span><?= $bage["text"]; ?></a></span>
+			    <a href="#"><img src="<?= $bage->image; ?>" />
+			    <span><?= $bage->text; ?></a></span>
                         </li>
 		        <?php } ?>
 		    </ul>
