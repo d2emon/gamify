@@ -61,6 +61,28 @@ class Profile extends \yii\base\Object
 	    ],
 	    'score' => 120,
 	    'shop' => '3 отпуска',
+	    'stats' => [
+	        [
+		    'image' => "http:://lorempixel.com/36/36/",
+		    'value' => 121,
+		    'text' => 'теплых звонков',
+		],
+	        [
+		    'image' => "http:://lorempixel.com/36/36/",
+		    'value' => 63,
+		    'text' => 'привлеченных клиента',
+		],
+	        [
+		    'image' => "http:://lorempixel.com/36/36/",
+		    'value' => 3,
+		    'text' => 'отказа от печенек',
+		],
+	        [
+		    'image' => "http:://lorempixel.com/36/36/",
+		    'value' => 1315,
+		    'text' => 'дней проработано',
+		],
+	    ],
 
         ],
     ];
