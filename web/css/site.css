@@ -105,6 +105,32 @@ a.desc:after {
     padding: 5px;
 }
 
+.more-button {
+    display: inline-block;
+    height: 24px;
+    border-radius: 10px;
+    margin: auto;
+    padding: 2px 12px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #ffffff;
+    background: #CCCCCC;
+}
+
+.more-button:after {
+    content: ">";
+}
+
+.more-button a {
+    text-decoration: none;
+}
+
+.more-float {
+    float: right;
+    position: relative;
+    top: -20px;
+}
+
 .user-avatar {
     display: block;
     margin: 5px;
@@ -115,32 +141,21 @@ a.desc:after {
 
 .job-link {
     display: block;
-    width: 160px;
-    text-decoration: none;
+    width: 150px;
 }
 
 .job-avatar {
     display: block;
-    margin: 5px;
     width: 150px;
     height: 150px;
     border-radius: 10px;
-    z-index: -1;
 }
 
 .job-link span {
-    display: block;
     background: #9999cc;
     width: 150px;
-    height: 20px;
-    border-radius: 10px;
-    margin: auto;
     position:relative;
-    top: -20px;
-    z-index: 10;
-    color: #ffffff;
-    text-align: center;
-    text-transform: capitalize;
+    top: -24px;
 }
 
 .profile-row {
@@ -154,3 +169,55 @@ a.desc:after {
     border: solid 1px;
     border-radius: 5px;
 }
+
+.d2-box .head {
+    margin: 0;
+    padding: 10px;
+    height: 36px;
+    border-bottom: solid 1px;
+}
+
+.d2-box h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#related-profiles {
+    background: #9999cc;
+} 
+
+.bages {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.bages li {
+    display: inline-block;
+    width: 150px;
+    margin: 20px;
+    padding: 0;
+    text-align: center;
+    vertical-align: top;
+    clear: both;
+}
+
+.bages li a {
+    display: block;
+    color: #999999;
+    text-decoration: none;
+}
+
+.bages li img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.bages li span {
+    display: block;
+}
+
+

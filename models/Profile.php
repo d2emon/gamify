@@ -30,7 +30,26 @@ class Profile extends \yii\base\Object
 		'workspace' => "2 этаж",
 		'position' => "Менеджер по теплым звонкам",
 	    	'responsibilities' => "Увеличивать количество клиентов на девятом этапе воронки продаж",
-	     ]
+	    ],
+	    'bages' => [
+		[
+		    'image' => "http://lorempixel.com/150/150/",
+		    'text' => "Лучший чебурек недели",
+		],
+		[
+		    'image' => "http://lorempixel.com/150/150/",
+		    'text' => "Почетный гвоздь",
+		],
+		[
+		    'image' => "http://lorempixel.com/150/150/",
+		    'text' => "3 года в компании",
+		],
+		[
+		    'image' => "http://lorempixel.com/150/150/",
+		    'text' => "Просто космос",
+		],
+	    ],
+
         ],
     ];
 

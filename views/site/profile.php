@@ -15,12 +15,12 @@ $this->title = 'My Yii Application';
                 </a>
 		<a href="<?= $profile->profile["job"]["url"]; ?>" class="job-link">
 		    <img src="<?= $profile->profile["job"]["avatar"]; ?>?seed=<?= rand(); ?>" alt="<?= $profile->profile["job"]["workspace"]; ?>" class="job-avatar" />
-	            <span><?= $profile->profile["job"]["workspace"]; ?> &gt;</span>	
+	            <span class="more-button"><?= $profile->profile["job"]["workspace"]; ?></span>	
                 </a>
             </div>
             <div class="col-lg-10">
-                <h3 class="col-lg-8"><?= $profile->fullname; ?></h3>
-		<a href="#" class="col-lg-4">Профили коллег &gt;</a>
+                <h3><?= $profile->fullname; ?></h3>
+		<a href="#" id="related-profiles" class="more-button">Профили коллег</a>
 		<table>
 		    <tr>
 		        <td class="profile-row">Увлечение:</td>
@@ -56,21 +56,30 @@ $this->title = 'My Yii Application';
         <div class="row">
             <div class="col-lg-12">
 		<div class="d2-box">
-                    <h2>Heading</h2>
+		    <div class="head">
+                        <h2>Бейджи</h2>
+			<a href="#" id="bages" class="more-button more-float">Смотреть все достижения</a>
+                    </div>
 
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                        fugiat nulla pariatur.</p>
-
-                    <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
+		    <?php if (count($profile->profile["bages"])) { ?>
+		    <ul class="bages">
+		        <?php foreach ($profile->profile["bages"] as $bage) { ?>
+			<li>
+			    <a href="#"><img src="<?= $bage["image"]; ?>" />
+			    <span><?= $bage["text"]; ?></a></span>
+                        </li>
+		        <?php } ?>
+		    </ul>
+		    <?php } ?>
                 </div>
             </div>
     	</div>
         <div class="row">
             <div class="col-lg-8">
 		<div class="d2-box">
-                    <h2>Heading</h2>
+		    <div class="head">
+                        <h2>Бейджи</h2>
+                    </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -80,7 +89,9 @@ $this->title = 'My Yii Application';
                     <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
                 </div>
 		<div class="d2-box">
-                    <h2>Heading</h2>
+		    <div class="head">
+                        <h2>Бейджи</h2>
+                    </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
@@ -92,7 +103,9 @@ $this->title = 'My Yii Application';
             </div>
             <div class="col-lg-4">
 		<div class="d2-box">
-                    <h2>Heading</h2>
+		    <div class="head">
+                        <h2>Бейджи</h2>
+                    </div>
 
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
                         dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
