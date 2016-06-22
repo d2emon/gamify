@@ -148,3 +148,9 @@ a.desc:after {
     font-weight: bold;
     vertical-align: top;
 }
+
+.d2-box {
+    margin: 20px;
+    border: solid 1px;
+    border-radius: 5px;
+}
