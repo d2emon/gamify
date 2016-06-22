@@ -89,3 +89,56 @@ a.desc:after {
     padding: 10px 20px;
     margin: 0 0 15px 0;
 }
+
+/* My additions */
+.site-index {
+    background-image: url("/images/profile.png");
+    background-repeat: no-repeat;
+}
+
+#profile-summary {
+    margin: 10px;
+    /* opacity: 0.5; */
+}
+
+#profile-summary div {
+    padding: 5px;
+}
+
+.user-avatar {
+    display: block;
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+}
+
+.job-link {
+    display: block;
+    width: 160px;
+    text-decoration: none;
+}
+
+.job-avatar {
+    display: block;
+    margin: 5px;
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    z-index: -1;
+}
+
+.job-link span {
+    display: block;
+    background: #9999cc;
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    margin: auto;
+    position:relative;
+    top: -20px;
+    z-index: 10;
+    color: #ffffff;
+    text-align: center;
+    text-transform: capitalize;
+}

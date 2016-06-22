@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Profile;
 
 class SiteController extends Controller
 {
@@ -130,6 +131,9 @@ class SiteController extends Controller
      */
     public function actionProfile()
     {
-	return $this->render('profile');
+	$profile = Profile::findById(100);
+	return $this->render('profile', [
+	    'profile' => $profile,
+        ]);
     }
 }

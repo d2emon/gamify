@@ -9,6 +9,7 @@ class Profile extends \yii\base\Object
     public $middlename;
     public $lastname;
 
+    public $profile;
     private static $profiles = [
         '100' => [
             'id' => '100',
@@ -22,9 +23,10 @@ class Profile extends \yii\base\Object
 		['contact_type' => 'phone', 'value' => '89072415396',            ],
 		['contact_type' => 'skype', 'value' => 'marg_240',               ],
 	    ],
-	    'avatar' => "http://lorempixel.com/400/200",
+	    'image' => "150/150",
 	    'job' => [
-		'avatar' => "http://lorempixel.com/400/200",
+		'avatar' => "http://lorempixel.com/150/150",
+		"url" => "#",
 		'workspace' => "2 этаж",
 		'position' => "Менеджер по теплым звонкам",
 	    	'responsibilities' => "Увеличивать количество клиентов на девятом этапе воронки продаж",
@@ -38,5 +40,61 @@ class Profile extends \yii\base\Object
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * Forms full name
+     * @return string
+     */
+    public function getFullname()
+    {
+	return join(' ', [
+	    $this->profile["firstname"],
+	    $this->profile["middlename"],
+	    $this->profile["lastname"],
+	]);
+    }
+
+    /**
+     * Forms avatar
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+	$avatar = sprintf("http://lorempixel.com/%s?seed=%s", $this->profile["image"], rand());
+	return $avatar;
+    }
+
+    /**
+     * Finds by User
+     *
+     * @return Profile
+     */
+    public static function findByUser($user)
+    {
+	return self::findById[$user->id];
+    }
+
+    /**
+     * Finds by ID
+     *
+     * @return Profile
+     */
+    public static function findById($user_id)
+    {
+	$profile = new Profile();
+	return $profile->load($user_id);
+    }
+
+    /**
+     * Loads by ID
+     *
+     * @return Profile
+     */
+    public function load($user_id)
+    {
+	$this->profile = self::$profiles[$user_id];
+	return $this;
     }
 }
