@@ -85,20 +85,20 @@ $this->title = 'My Yii Application';
             		<div class="col-lg-6 level-columns">
         		    <div class="row">
             		        <div class="col-lg-3 level-image">
-				    <img src="<?= $profile->profile["level"]["image"]; ?>" />
+				    <img src="<?= $profile->level->avatar; ?>" />
                                 </div>
             		        <div class="col-lg-9 level-name">
-				    <h2><?= $profile->profile["level"]["title"]; ?></h2>
+				    <h2><?= $profile->level->title; ?></h2>
 				    <span><a href="<?= Url::to(['site/levels']); ?>">Смотреть систему уровней</a></span>
                                 </div>
                             </div>
                         </div>
             		<div class="col-lg-6">
 			    <h4>До следующего осталось:</h4>
-			    <?php if (count($profile->profile["level"]["to_next"])) { ?>
+			    <?php if (count($profile->level->tasks)) { ?>
                             <ul>
-			    <?php foreach ($profile->profile["level"]["to_next"] as $task) { ?>
-			    <li><?= $task["task"]; ?></li>
+			    <?php foreach ($profile->level->tasks as $task) { ?>
+			    <li><?= $task->task; ?></li>
 			    <?php } ?>
 			    </ul>
 			    <?php } ?>

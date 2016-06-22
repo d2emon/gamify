@@ -11,6 +11,7 @@ class Profile extends \yii\base\Object
     private $_contacts;
     private $_job;
     private $_bages;
+    private $_level;
 
     public $profile;
     private static $profiles = [
@@ -22,6 +23,8 @@ class Profile extends \yii\base\Object
 	    'hobby' => 'Болеть за зертак, отмечать новый год в Кушевеле, читать Кафку.',
 	    'education' => 'Неполное высшее экономическое образование.',
 	    'image' => "150/150",
+	    'score' => 120,
+	    'level' => 7,
 	    /*
 	    'contacts' => [
 		['contact_type' => 'email', 'value' => 'margarin_240@gmail.com', ],
@@ -54,18 +57,9 @@ class Profile extends \yii\base\Object
 		    'text' => "Просто космос",
 		],
 	    ],
-	    */
 	    'level' => [
-		'id' => 7,
-	        'image' => "http://lorempixel.com/40/40/",
-                "title" => "Warmaster",
-		'to_next' => [
-		    ['done' => False, 'task' => 'Сдать тест на знание библии.',],
-		    ['done' => False, 'task' => 'Сделать 7 успешных теплых звонков.',],
-		    ['done' => False, 'task' => 'Сделать прививку.',],
-		],
 	    ],
-	    'score' => 120,
+	    */
 	    'shop' => '3 отпуска',
 	    'stats' => [
 	        [
@@ -151,6 +145,20 @@ class Profile extends \yii\base\Object
 	    $this->_job = Job::findByProfileId($this->id);
 	}
 	return $this->_job;
+    }
+    
+    /**
+     * Loads level
+     *
+     * @return Level
+     */
+    public function getLevel()
+    {
+	if(!isset($this->_level))
+	{
+	    $this->_level = Level::findById($this->profile['level']);
+	}
+	return $this->_level;
     }
     
     /**
