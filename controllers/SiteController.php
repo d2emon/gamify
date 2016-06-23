@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Profile;
+use app\models\Job;
 
 class SiteController extends Controller
 {
@@ -129,11 +130,128 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionProfile()
+    public function actionProfile($id=100)
     {
-	$profile = Profile::findById(100);
+	$profile = Profile::findById($id);
 	return $this->render('profile', [
 	    'profile' => $profile,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionWorkspace($id=100)
+    {
+	$job = Job::findById($id);
+	return $this->render('workspace', [
+	    'job' => $job,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionUserlist($id=100)
+    {
+	$profile = Profile::findById($id);
+	return $this->render('userlist', [
+	    'profile' => $profile,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionUser_badges($id=100)
+    {
+	$bage = Bages::findByProfileId($id);
+	return $this->render('bages', [
+	    'bages' => $bages,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionBadge($id=100)
+    {
+	$bage = Bages::findByProfileId($id);
+	return $this->render('bage', [
+	    'bage' => $bage,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionLevel($id=100)
+    {
+	$level = Level::findById($id);
+	return $this->render('level', [
+	    'level' => $level,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionShop($id=100)
+    {
+	$score = Score::findById($id);
+	return $this->render('score', [
+	    'score' => $score,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionBuy($id=100)
+    {
+	$score = Score::findById($id);
+	return $this->render('score', [
+	    'score' => $score,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionShop_random($id=100)
+    {
+	$score = Score::findById($id);
+	return $this->render('score', [
+	    'score' => $score,
+        ]);
+    }
+
+    /**
+     * Displays workspace profile page.
+     *
+     * @return string
+     */
+    public function actionStats($id=100)
+    {
+	$stat = Stats::findByProfileId($id);
+	return $this->render('stat', [
+	    'stat' => $stat,
         ]);
     }
 }
