@@ -121,7 +121,7 @@ a.desc:after {
 }
 
 .more-button:after {
-    content: ">";
+    content: " >";
 }
 
 .more-button a {
@@ -192,13 +192,13 @@ a.desc:after {
     top: -36px;
 } 
 
-.bages {
+.badges {
     margin: 0;
     padding: 0;
     vertical-align: top;
 }
 
-.bages li {
+.badges li {
     display: inline-block;
     width: 150px;
     margin: 10px;
@@ -208,20 +208,20 @@ a.desc:after {
     clear: both;
 }
 
-.bages li a {
+.badges li a {
     display: block;
     color: #999999;
     text-decoration: none;
 }
 
-.bages li img {
+.badges li img {
     display: block;
     width: 150px;
     height: 150px;
     border-radius: 75px;
 }
 
-.bages li span {
+.badges li span {
     display: block;
 }
 
@@ -285,5 +285,5 @@ a.desc:after {
 }
 
 .buy:after {
-    content: ">";
+    content: " >";
 }

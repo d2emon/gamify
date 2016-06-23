@@ -59,15 +59,15 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Бейджи</h2>
-			<a href="<?= Url::to(['site/user-bages', 'id' => $profile->id]); ?>" id="bages" class="more-button more-float">Смотреть все достижения</a>
+			<a href="<?= Url::to(['site/badges', 'user_id' => $profile->id]); ?>" id="badges" class="more-button more-float">Смотреть все достижения</a>
                     </div>
 
-		    <?php if (count($profile->bages)) { ?>
-		    <ul class="bages">
-		        <?php foreach ($profile->bages as $bage) { ?>
+		    <?php if (count($profile->badges)) { ?>
+		    <ul class="badges">
+		        <?php foreach ($profile->badges as $badge) { ?>
 			<li>
-			    <a href="<?= Url::to(['site/bage', 'id' => $bage->id]); ?>"><img src="<?= $bage->image; ?>" />
-			    <span><?= $bage->text; ?></a></span>
+			    <a href="<?= Url::to(['site/badges', 'badge_id' => $badge->id]); ?>"><img src="<?= $badge->image; ?>" />
+			    <span><?= $badge->text; ?></a></span>
                         </li>
 		        <?php } ?>
 		    </ul>
@@ -108,7 +108,7 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Очки</h2>
-			<a href="<?= Url::to(['site/shop']); ?>" id="bages" class="more-button more-float">Перейти в магазин</a>
+			<a href="<?= Url::to(['site/shop']); ?>" id="badges" class="more-button more-float">Перейти в магазин</a>
                     </div>
 		    <div class="row">
             		<div id="scorebox" class="col-lg-4">
@@ -116,7 +116,7 @@ $this->title = 'My Yii Application';
                         </div>
 			<div class="col-lg-8">
                             <h5>На них можно купить:</h5>
-			    <a href="<?= Url::to(['site/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->shop; ?></a> <a href="<?= Url::to(['site/shop-random']); ?>">O</a>
+			    <a href="<?= Url::to(['site/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->shop; ?></a> <a href="<?= Url::to(['site/shop_random']); ?>">O</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Статистика</h2>
-			<a href="<?= Url::to(['site/stats']); ?>" id="bages" class="more-button more-float">Подробнее</a>
+			<a href="<?= Url::to(['site/stats']); ?>" id="badges" class="more-button more-float">Подробнее</a>
                     </div>
 		    <?php if (count($profile->stats)) { ?>
                     <ul>

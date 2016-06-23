@@ -10,7 +10,7 @@ class Profile extends \yii\base\Object
 
     private $_contacts;
     private $_job;
-    private $_bages;
+    private $_badges;
     private $_score;
     private $_stats;
 
@@ -41,7 +41,7 @@ class Profile extends \yii\base\Object
 		'position' => "Менеджер по теплым звонкам",
 	    	'responsibilities' => "Увеличивать количество клиентов на девятом этапе воронки продаж",
 	    ],
-	    'bages' => [
+	    'badges' => [
 		[
 		    'image' => "http://lorempixel.com/150/150/",
 		    'text' => "Лучший чебурек недели",
@@ -167,17 +167,17 @@ class Profile extends \yii\base\Object
     }
     
     /**
-     * Loads bages
+     * Loads badges
      *
      * @return array
      */
-    public function getBages()
+    public function getBadges()
     {
-	if(!isset($this->_bages))
+	if(!isset($this->_badges))
 	{
-	    $this->_bages = Bage::findByProfileId($this->id);
+	    $this->_badges = Badge::find(['user_id' => $this->id]);
 	}
-	return $this->_bages;
+	return $this->_badges;
     }
     
     /**

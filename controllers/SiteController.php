@@ -10,6 +10,7 @@ use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Profile;
 use app\models\Job;
+use app\models\Badge;
 
 class SiteController extends Controller
 {
@@ -165,28 +166,18 @@ class SiteController extends Controller
     }
 
     /**
-     * Displays workspace profile page.
+     * Displays badges page.
      *
      * @return string
      */
-    public function actionUser_badges($id=100)
+    public function actionBadges($user_id=0, $badge_id=0)
     {
-	$bage = Bages::findByProfileId($id);
-	return $this->render('bages', [
-	    'bages' => $bages,
-        ]);
-    }
-
-    /**
-     * Displays workspace profile page.
-     *
-     * @return string
-     */
-    public function actionBadge($id=100)
-    {
-	$bage = Bages::findByProfileId($id);
-	return $this->render('bage', [
-	    'bage' => $bage,
+	$badges = Badge::find(['user_id'=>$user_id]);
+	$selected = Badge::find(['badge_id'=>$badge_id])[0];
+	return $this->render('badge', [
+	    'badges' => $badges,
+	    'badge_id' => $badge_id,
+	    'selected' => $selected,
         ]);
     }
 
