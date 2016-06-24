@@ -20,6 +20,16 @@ class Task extends \yii\base\Object
     }
 
     /**
+     * Returns done
+     *
+     * @return boolean
+     */
+    public function getDone()
+    {
+	return $this->_task["done"];
+    }
+
+    /**
      * Returns task
      *
      * @return string

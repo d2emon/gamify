@@ -11,6 +11,7 @@ use app\models\ContactForm;
 use app\models\Profile;
 use app\models\Job;
 use app\models\Badge;
+use app\models\Level;
 
 class SiteController extends Controller
 {
@@ -186,11 +187,21 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLevel($id=100)
+    public function actionLevels($id=0)
     {
-	$level = Level::findById($id);
+	if($id == 0)
+	{
+	    $profile = Profile::findById(100);
+            $level = $profile->score->level;
+	}
+	else
+	{
+	    $level = Level::findById($id);
+	}
+	$levels = Level::findAll();
 	return $this->render('level', [
 	    'level' => $level,
+            'levels' => $levels,
         ]);
     }
 

@@ -7,6 +7,48 @@ class Level extends \yii\base\Object
     private $_level;
     private $_tasks;
     private static $levels = [
+	'1' => [
+	    'id' => 1,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'2' => [
+	    'id' => 2,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'3' => [
+	    'id' => 3,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'4' => [
+	    'id' => 4,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'5' => [
+	    'id' => 5,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'6' => [
+	    'id' => 6,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
         '7' => [
             'id' => 7,
 	    'image' => "40/40/",
@@ -17,6 +59,30 @@ class Level extends \yii\base\Object
 		    ['done' => False, 'task' => 'Сделать 7 успешных теплых звонков.',],
 		    ['done' => False, 'task' => 'Сделать прививку.',],
 	     */
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'8' => [
+	    'id' => 8,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'9' => [
+	    'id' => 9,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
+	],
+	'10' => [
+	    'id' => 10,
+	    'image' => "40/40",
+	    'bonus_score' => 10,
+	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
+	    'megabonus' => 'Отгул в любой день',
 	],
     ];
 
@@ -52,6 +118,36 @@ class Level extends \yii\base\Object
     }
 
     /**
+     * Level bonus
+     *
+     * @return string
+     */
+    public function getBonus()
+    {
+	return $this->_level["bonus"];
+    }
+
+    /**
+     * Level bonus score
+     *
+     * @return integer
+     */
+    public function getBonus_score()
+    {
+	return $this->_level["bonus_score"];
+    }
+
+    /**
+     * Level megabonus
+     *
+     * @return string
+     */
+    public function getMegabonus()
+    {
+	return $this->_level["megabonus"];
+    }
+
+    /**
      * Tasks for next level
      *
      * @return array
@@ -80,6 +176,22 @@ class Level extends \yii\base\Object
     {
 	$level = new Level();
 	return $level->load($level_id);
+    }
+
+    /**
+     * Finds all
+     *
+     * @return array
+     */
+    public static function findAll()
+    {
+	$levels = [];
+	foreach(array_keys(self::$levels) as $level_id)
+	{
+	    $level = new Level();
+	    $levels[] = $level->load($level_id);
+	}
+	return $levels;
     }
 
     /**
