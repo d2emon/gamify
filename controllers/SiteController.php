@@ -12,6 +12,8 @@ use app\models\Profile;
 use app\models\Job;
 use app\models\Badge;
 use app\models\Level;
+use app\models\Score;
+use app\models\Item;
 
 class SiteController extends Controller
 {
@@ -210,11 +212,13 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionShop($id=100)
+    public function actionShop()
     {
-	$score = Score::findById($id);
+	$profile = Profile::findById(100);
+	$items = Item::findAll();
 	return $this->render('score', [
-	    'score' => $score,
+	    'profile' => $profile,
+            'items' => $items,
         ]);
     }
 
