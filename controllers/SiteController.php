@@ -9,10 +9,8 @@ use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
 use app\models\Profile;
-use app\models\Job;
 use app\models\Badge;
 use app\models\Level;
-use app\models\Score;
 use app\models\Item;
 use app\models\Advice;
 
@@ -148,19 +146,6 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionWorkspace($id=100)
-    {
-	$profiles = Profile::findAll();
-	return $this->render('workspace', [
-	    'profiles' => $profiles,
-        ]);
-    }
-
-    /**
-     * Displays workspace profile page.
-     *
-     * @return string
-     */
     public function actionUserlist($id=100)
     {
 	$profiles = Profile::findAll();
@@ -222,45 +207,6 @@ class SiteController extends Controller
 	return $this->render('score', [
 	    'profile' => $profile,
             'items' => $items,
-        ]);
-    }
-
-    /**
-     * Displays workspace profile page.
-     *
-     * @return string
-     */
-    public function actionBuy($id=100)
-    {
-	$score = Score::findById($id);
-	return $this->render('score', [
-	    'score' => $score,
-        ]);
-    }
-
-    /**
-     * Displays workspace profile page.
-     *
-     * @return string
-     */
-    public function actionShop_random($id=100)
-    {
-	$score = Score::findById($id);
-	return $this->render('score', [
-	    'score' => $score,
-        ]);
-    }
-
-    /**
-     * Displays workspace profile page.
-     *
-     * @return string
-     */
-    public function actionStats($id=100)
-    {
-	$stat = Stats::findByProfileId($id);
-	return $this->render('stat', [
-	    'stat' => $stat,
         ]);
     }
 }

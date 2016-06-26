@@ -23,7 +23,7 @@ $this->title = 'My Yii Application';
 			    <?php if (count($items)) { ?>
 			    <ul>
                             <?php foreach($items as $item) { ?>
-			    <li><img src="<?= $item->avatar; ?>"> <?= $item->title; ?> <a href="<?= Url::to(['site/buy', 'id' => $item->id]); ?>"><?= $item->score; ?> очков</a></li>
+			    <li><img src="<?= $item->avatar; ?>"> <?= $item->title; ?> <a href="<?= Url::to(['dummy/buy', 'id' => $item->id]); ?>"><?= $item->score; ?> очков</a></li>
                             <?php } ?>
                             </ul>
                             <?php } ?>

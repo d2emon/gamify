@@ -14,7 +14,7 @@ $this->title = 'My Yii Application';
 		<a href="<?= Url::to(['site/profile', 'id' => $profile->id]); ?>" class="profile-link">
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
-		<a href="<?= Url::to(['site/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
+		<a href="<?= Url::to(['dummy/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
 		    <img src="<?= $profile->job->avatar; ?>" alt="<?= $profile->job->workspace; ?>" class="job-avatar" />
 	            <span class="more-button"><?= $profile->job->workspace; ?></span>	
                 </a>
@@ -116,7 +116,7 @@ $this->title = 'My Yii Application';
                         </div>
 			<div class="col-lg-8">
                             <h5>На них можно купить:</h5>
-			    <a href="<?= Url::to(['site/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->random_shop; ?></a> <a href="<?= Url::to(['site/shop_random']); ?>">O</a>
+			    <a href="<?= Url::to(['dummy/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->random_shop; ?></a> <a href="<?= Url::to(['dummy/shop_random']); ?>">O</a>
                         </div>
                     </div>
                 </div>
@@ -125,7 +125,7 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Статистика</h2>
-			<a href="<?= Url::to(['site/stats']); ?>" id="badges" class="more-button more-float">Подробнее</a>
+			<a href="<?= Url::to(['dummy/stats']); ?>" id="badges" class="more-button more-float">Подробнее</a>
                     </div>
 		    <?php if (count($profile->stats)) { ?>
                     <ul>
