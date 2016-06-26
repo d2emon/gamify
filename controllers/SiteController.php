@@ -14,6 +14,7 @@ use app\models\Badge;
 use app\models\Level;
 use app\models\Score;
 use app\models\Item;
+use app\models\Advice;
 
 class SiteController extends Controller
 {
@@ -163,8 +164,10 @@ class SiteController extends Controller
     public function actionUserlist($id=100)
     {
 	$profiles = Profile::findAll();
+	$advice = Advice::find();
 	return $this->render('userlist', [
 	    'profiles' => $profiles,
+            'advice' => $advice,
         ]);
     }
 

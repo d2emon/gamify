@@ -44,8 +44,7 @@ $this->title = 'My Yii Application';
             <div class="col-lg-6">
                 <h2>Совет</h2>
 		<div>
-		Не расстраивайтесь, что вы на 15 месте!
-		Пусть мама за вас расстраивается, бесполезный вы неудачник.
+		<?= nl2br($advice->text); ?>
 		</div>
             </div>
     	</div>
