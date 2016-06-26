@@ -13,6 +13,7 @@ use app\models\Badge;
 use app\models\Level;
 use app\models\Item;
 use app\models\Advice;
+use app\models\Campaign;
 
 class SiteController extends Controller
 {
@@ -138,6 +139,19 @@ class SiteController extends Controller
 	$profile = Profile::findById($id);
 	return $this->render('profile', [
 	    'profile' => $profile,
+        ]);
+    }
+
+    /**
+     * Displays user quests page.
+     *
+     * @return string
+     */
+    public function actionQuests($id=100)
+    {
+	$campaigns = Campaign::findByProfileId($id);
+	return $this->render('quests', [
+	    'campaigns' => $campaigns,
         ]);
     }
 
