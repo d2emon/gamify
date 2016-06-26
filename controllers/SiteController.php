@@ -149,9 +149,9 @@ class SiteController extends Controller
      */
     public function actionWorkspace($id=100)
     {
-	$job = Job::findById($id);
+	$profiles = Profile::findAll();
 	return $this->render('workspace', [
-	    'job' => $job,
+	    'profiles' => $profiles,
         ]);
     }
 
@@ -162,9 +162,9 @@ class SiteController extends Controller
      */
     public function actionUserlist($id=100)
     {
-	$profile = Profile::findById($id);
+	$profiles = Profile::findAll();
 	return $this->render('userlist', [
-	    'profile' => $profile,
+	    'profiles' => $profiles,
         ]);
     }
 

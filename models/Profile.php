@@ -24,6 +24,7 @@ class Profile extends \yii\base\Object
 	    'hobby' => 'Болеть за зертак, отмечать новый год в Кушевеле, читать Кафку.',
 	    'education' => 'Неполное высшее экономическое образование.',
 	    'image' => "150/150",
+	    'rating' => 10456,
 	    /*
 	    'score' => 120,
 	    'level' => 7,
@@ -87,6 +88,15 @@ class Profile extends \yii\base\Object
 	    $this->profile["middlename"],
 	    $this->profile["lastname"],
 	]);
+    }
+
+    /**
+     * Forms rating
+     * @return integer
+     */
+    public function getRating()
+    {
+	return $this->profile["rating"];
     }
 
     /**
@@ -199,6 +209,22 @@ class Profile extends \yii\base\Object
     {
 	$profile = new Profile();
 	return $profile->load($user_id);
+    }
+
+    /**
+     * Finds all
+     *
+     * @return array
+     */
+    public static function findAll()
+    {
+	$profiles = [];
+	foreach(array_keys(self::$profiles) as $profile_id)
+	{
+	    $profile = new Profile();
+	    $profiles[] = $profile->load($profile_id);
+	}
+	return $profiles;
     }
 
     /**
