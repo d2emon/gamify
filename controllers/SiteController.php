@@ -14,6 +14,7 @@ use app\models\Level;
 use app\models\Item;
 use app\models\Advice;
 use app\models\Campaign;
+use app\models\Test;
 
 class SiteController extends Controller
 {
@@ -152,6 +153,19 @@ class SiteController extends Controller
 	$campaigns = Campaign::findByProfileId($id);
 	return $this->render('quests', [
 	    'campaigns' => $campaigns,
+        ]);
+    }
+
+    /**
+     * Displays user tests page.
+     *
+     * @return string
+     */
+    public function actionTests($id=100)
+    {
+	$tests = Test::findByProfileId($id);
+	return $this->render('tests', [
+	    'tests' => $tests,
         ]);
     }
 

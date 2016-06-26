@@ -15,6 +15,10 @@ class Task extends \yii\base\Object
 	['done' => False, 'task' => 'Удалить себя из системы',],
 	['done' => False, 'task' => 'Улыбнуться начальнику',],
 	['done' => False, 'task' => 'Встать вовремя на работу',],
+	['done' => False, 'task' => 'Основной функционал',],
+	['done' => False, 'task' => 'Виртуальный ассистент',],
+	['done' => False, 'task' => 'Звонок в пульт',],
+	['done' => False, 'task' => 'Лиды из чата',],
     ];
 
     /**
