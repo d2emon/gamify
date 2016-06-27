@@ -59,15 +59,15 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Бейджи</h2>
-			<a href="<?= Url::to(['site/badges', 'user_id' => $profile->id]); ?>" id="badges" class="more-button more-float">Смотреть все достижения</a>
+			<a href="<?= Url::to(['/badge/default/index', 'user_id' => $profile->id]); ?>" id="badges" class="more-button more-float">Смотреть все достижения</a>
                     </div>
 
 		    <?php if (count($profile->badges)) { ?>
 		    <ul class="badges">
 		        <?php foreach ($profile->badges as $badge) { ?>
 			<li>
-			    <a href="<?= Url::to(['site/badges', 'badge_id' => $badge->id]); ?>"><img src="<?= $badge->image; ?>" />
-			    <span><?= $badge->text; ?></a></span>
+			    <a href="<?= Url::to(['/badge', 'badge_id' => $badge->id]); ?>"><img src="/images/badge/<?= $badge->avatar; ?>" />
+			    <span><?= $badge->title; ?></a></span>
                         </li>
 		        <?php } ?>
 		    </ul>

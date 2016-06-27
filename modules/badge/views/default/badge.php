@@ -20,8 +20,8 @@ $this->title = 'My Yii Application';
 		    <ul class="badges">
 		        <?php foreach ($badges as $badge) { ?>
 			<li>
-			    <a href="<?= Url::to(['site/badges', 'badge_id' => $badge->id]); ?>"><img src="<?= $badge->image; ?>" />
-			    <span><?= $badge->text; ?></a></span>
+			    <a href="<?= Url::to(['/badge/default/index', 'badge_id' => $badge->id]); ?>"><img src="/images/badge/<?= $badge->avatar; ?>" />
+			    <span><?= $badge->title; ?></a></span>
 			    <?php if ($badge->id == $badge_id) { ?>
 			    <div>
                             <?= $badge->description; ?>

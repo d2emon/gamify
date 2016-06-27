@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\modules\badge\models\Badge;
+
 class Profile extends \yii\base\Object
 {
     public $firstname;
@@ -185,7 +187,8 @@ class Profile extends \yii\base\Object
     {
 	if(!isset($this->_badges))
 	{
-	    $this->_badges = Badge::find(['user_id' => $this->id]);
+	    // Only my
+	    $this->_badges = Badge::find()->all();
 	}
 	return $this->_badges;
     }

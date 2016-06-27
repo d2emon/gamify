@@ -49,6 +49,9 @@ $config = [
         'user' => [
 	    'class' => 'app\modules\user\Module',
 	],
+        'badge' => [
+	    'class' => 'app\modules\badge\Module',
+	],
     ],
     'params' => $params,
 ];

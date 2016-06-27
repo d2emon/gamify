@@ -6,7 +6,6 @@ use Yii;
 use yii\web\Controller;
 use app\models\ContactForm;
 use app\models\Profile;
-use app\models\Badge;
 use app\models\Level;
 use app\models\Item;
 use app\models\Advice;
@@ -120,22 +119,6 @@ class SiteController extends Controller
 	return $this->render('userlist', [
 	    'profiles' => $profiles,
             'advice' => $advice,
-        ]);
-    }
-
-    /**
-     * Displays badges page.
-     *
-     * @return string
-     */
-    public function actionBadges($user_id=0, $badge_id=0)
-    {
-	$badges = Badge::find(['user_id'=>$user_id]);
-	$selected = Badge::find(['badge_id'=>$badge_id])[0];
-	return $this->render('badge', [
-	    'badges' => $badges,
-	    'badge_id' => $badge_id,
-	    'selected' => $selected,
         ]);
     }
 
