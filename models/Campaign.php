@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\modules\task\models\Task;
+
 class Campaign extends \yii\base\Object
 {
     private $_campaign;
@@ -12,20 +14,20 @@ class Campaign extends \yii\base\Object
 	    'id' => 1,
 	    'image' => "40/40",
             'title' => "Пульт оператора",
-	    'tasks' => [3, 4],
+	    'tasks' => [4,5],
 	    'bonuses' => [],
 	],
 	'2' => [
 	    'id' => 2,
 	    'image' => "40/40",
             'title' => "CRM",
-	    'tasks' => [5, 6],
+	    'tasks' => [6,7],
 	    'bonuses' => [],
 	],
 	'3' => [
 	    'id' => 3,
 	    'image' => "40/40",
-	    'tasks' => [7, 8],
+	    'tasks' => [8,9],
             'title' => "Компания",
 	    'bonuses' => [
 		'Хорошее настроение у начальства',
@@ -91,7 +93,7 @@ class Campaign extends \yii\base\Object
 	$this->_tasks = [];
 	foreach($this->_campaign["tasks"] as $task_id)
 	{
-	    $this->_tasks[] = Task::findById($task_id);
+	    $this->_tasks[] = Task::findOne($task_id);
 	}
 	return $this->_tasks;
     }

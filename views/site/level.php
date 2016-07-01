@@ -30,7 +30,7 @@ $this->title = 'My Yii Application';
 	        <?php if (count($level->tasks)) { ?>
                 <ul>
 		<?php foreach ($level->tasks as $task) { ?>
-		<li<?php if($task->done) {?> class="finished"<?php } ?>><?= $task->task; ?></li>
+		<li<?php if($task->completed) {?> class="finished"<?php } ?>><?= $task->title; ?></li>
 		<?php } ?>
 		</ul>
 		<?php } ?>

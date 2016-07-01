@@ -24,7 +24,7 @@ $this->title = 'My Yii Application';
 		    <?php if (count($test->tasks)) { ?>
 		    <ul>
 		        <?php foreach ($test->tasks as $quest) { ?>
-			<li><?php print_r($quest->task); ?></li>
+			<li><?= $quest->title; ?></li>
 		        <?php } ?>
 		    </ul>
 		    <?php } ?>

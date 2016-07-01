@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\modules\task\models\Task;
+
 class Test extends \yii\base\Object
 {
     private $_test;
@@ -12,7 +14,7 @@ class Test extends \yii\base\Object
 	    'id' => 1,
 	    'image' => "40/40",
             'title' => "Пульт оператора",
-	    'tasks' => [9, 10, 11, 12],
+	    'tasks' => [10, 11, 12, 13],
 	    'bonuses' => [],
 	],
 	'2' => [
@@ -84,7 +86,7 @@ class Test extends \yii\base\Object
 	$this->_tasks = [];
 	foreach($this->_test["tasks"] as $task_id)
 	{
-	    $this->_tasks[] = Task::findById($task_id);
+	    $this->_tasks[] = Task::findOne($task_id);
 	}
 	return $this->_tasks;
     }

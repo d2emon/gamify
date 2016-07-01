@@ -98,7 +98,7 @@ $this->title = 'My Yii Application';
 			    <?php if (count($profile->level->tasks)) { ?>
                             <ul>
 			    <?php foreach ($profile->level->tasks as $task) { ?>
-			    <li><?= $task->task; ?></li>
+			    <li><?= $task->title; ?></li>
 			    <?php } ?>
 			    </ul>
 			    <?php } ?>

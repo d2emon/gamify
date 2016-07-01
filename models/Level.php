@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\modules\task\models\Task;
+
 class Level extends \yii\base\Object
 {
     private $_level;
@@ -53,7 +55,7 @@ class Level extends \yii\base\Object
             'id' => 7,
 	    'image' => "40/40/",
             'title' => "Warmaster",
-	    'tasks' => [0, 1, 2],
+	    'tasks' => [1, 2, 3],
 	    /*
 		    ['done' => False, 'task' => 'Сдать тест на знание библии.',],
 		    ['done' => False, 'task' => 'Сделать 7 успешных теплых звонков.',],
@@ -162,7 +164,7 @@ class Level extends \yii\base\Object
 	$this->_tasks = [];
 	foreach($this->_level["tasks"] as $task_id)
 	{
-	    $this->_tasks[] = Task::findById($task_id);
+	    $this->_tasks[] = Task::findOne($task_id);
 	}
 	return $this->_tasks;
     }
