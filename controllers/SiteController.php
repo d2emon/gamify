@@ -103,11 +103,8 @@ class SiteController extends Controller
     public function actionTests($id=100)
     {
 	$profile = Profile::findById($id);
-	$tests = $profile->tests;
-	$bonuses = Bonus::findAll([ 5, 6]);
 	return $this->render('tests', [
-	    'tests' => $tests,
-            'bonuses' => $bonuses,
+	    'tests' => $profile->tests,
         ]);
     }
 

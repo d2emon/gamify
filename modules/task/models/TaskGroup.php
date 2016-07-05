@@ -55,18 +55,16 @@ class TaskGroup extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    /*
-    public function getTask2groups()
+    public function getTasks()
     {
-        return $this->hasMany(Task2group::className(), ['group_id' => 'id']);
+        return $this->hasMany(Task::className(), ['id' => 'task_id'])->viaTable('task2group', ['group_id' => 'id']);
     }
-     */
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getTasks()
+    public function getBonuses()
     {
-        return $this->hasMany(Task::className(), ['id' => 'task_id'])->viaTable('task2group', ['group_id' => 'id']);
+        return $this->hasMany(Bonus::className(), ['id' => 'bonus_id'])->viaTable('group2bonus', ['group_id' => 'id']);
     }
 }
