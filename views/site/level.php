@@ -39,13 +39,13 @@ $this->title = 'My Yii Application';
 		<h3>Награда:</h3>
 		<span><?= $level->bonus_score; ?> очков</span>
 		<div>
-                <?= $level->bonus; ?>
+                <?= $level->bonus->title; ?>
 		</div>
             </div>
             <div class="col-lg-3">
 		<h3>Меганаграда:</h3>
 		<div>
-                <?= $level->megabonus; ?>
+                <?= $level->megabonus->title; ?>
 		</div>
             </div>
     	</div>

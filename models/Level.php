@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\modules\task\models\Task;
+use app\modules\task\models\Bonus;
 
 class Level extends \yii\base\Object
 {
@@ -13,43 +14,43 @@ class Level extends \yii\base\Object
 	    'id' => 1,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'2' => [
 	    'id' => 2,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'3' => [
 	    'id' => 3,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'4' => [
 	    'id' => 4,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'5' => [
 	    'id' => 5,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'6' => [
 	    'id' => 6,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
         '7' => [
             'id' => 7,
@@ -62,29 +63,29 @@ class Level extends \yii\base\Object
 		    ['done' => False, 'task' => 'Сделать прививку.',],
 	     */
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'8' => [
 	    'id' => 8,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'9' => [
 	    'id' => 9,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
 	'10' => [
 	    'id' => 10,
 	    'image' => "40/40",
 	    'bonus_score' => 10,
-	    'bonus' => 'Повышение количества одновременно съедаемых печенек на 2',
-	    'megabonus' => 'Отгул в любой день',
+	    'bonus' => 1,
+	    'megabonus' => 2,
 	],
     ];
 
@@ -126,7 +127,7 @@ class Level extends \yii\base\Object
      */
     public function getBonus()
     {
-	return $this->_level["bonus"];
+	return Bonus::findOne($this->_level["bonus"]);
     }
 
     /**
@@ -146,7 +147,7 @@ class Level extends \yii\base\Object
      */
     public function getMegabonus()
     {
-	return $this->_level["megabonus"];
+	return Bonus::findOne($this->_level["megabonus"]);
     }
 
     /**

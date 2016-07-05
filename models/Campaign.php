@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\modules\task\models\Task;
+use app\modules\task\models\Bonus;
 
 class Campaign extends \yii\base\Object
 {
@@ -29,10 +30,7 @@ class Campaign extends \yii\base\Object
 	    'image' => "40/40",
 	    'tasks' => [8,9],
             'title' => "Компания",
-	    'bonuses' => [
-		'Хорошее настроение у начальства',
-		'3 к хмурению бровок',
-	    ]
+	    'bonuses' => [ 3, 4 ],
     	],
 	],
     ];
@@ -75,7 +73,7 @@ class Campaign extends \yii\base\Object
      */
     public function getBonuses()
     {
-	return $this->_campaign["bonuses"];
+	return Bonus::findAll($this->_campaign["bonuses"]);
     }
 
     /**

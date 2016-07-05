@@ -32,7 +32,7 @@ $this->title = 'My Yii Application';
 			<h4>Награда:</h4>
 		    <ul>
 		        <?php foreach ($campaign->bonuses as $bonus) { ?>
-			<li><?= $bonus; ?></li>
+			<li><?= $bonus->title; ?></li>
 		        <?php } ?>
 		    </ul>
 		    <?php } ?>
