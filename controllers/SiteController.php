@@ -10,7 +10,8 @@ use app\models\Level;
 use app\models\Item;
 use app\models\Advice;
 use app\models\Campaign;
-use app\models\Test;
+use app\modules\task\models\TaskGroup;
+use app\modules\task\models\Bonus;
 
 class SiteController extends Controller
 {
@@ -101,9 +102,12 @@ class SiteController extends Controller
      */
     public function actionTests($id=100)
     {
-	$tests = Test::findByProfileId($id);
+	$profile = Profile::findById($id);
+	$tests = $profile->tests;
+	$bonuses = Bonus::findAll([ 5, 6]);
 	return $this->render('tests', [
 	    'tests' => $tests,
+            'bonuses' => $bonuses,
         ]);
     }
 

@@ -3,6 +3,7 @@
 namespace app\models;
 
 use app\modules\badge\models\Badge;
+use app\modules\task\models\TaskGroup;
 
 class Profile extends \yii\base\Object
 {
@@ -15,6 +16,7 @@ class Profile extends \yii\base\Object
     private $_badges;
     private $_score;
     private $_stats;
+    private $_tests;
 
     public $profile;
     private static $profiles = [
@@ -27,6 +29,7 @@ class Profile extends \yii\base\Object
 	    'education' => 'Неполное высшее экономическое образование.',
 	    'image' => "150/150",
 	    'rating' => 10456,
+	    'tasks' => [ 1, 2],
 	    /*
 	    'score' => 120,
 	    'level' => 7,
@@ -191,6 +194,21 @@ class Profile extends \yii\base\Object
 	    $this->_badges = Badge::find()->all();
 	}
 	return $this->_badges;
+    }
+    
+    /**
+     * Loads badges
+     *
+     * @return array
+     */
+    public function getTests()
+    {
+	if(!isset($this->_tests))
+	{
+	    // Only my
+	    $this->_tests = TaskGroup::find(['tasks.task_id' => $this->profile['tasks']])->with('tasks')->all();
+	}
+	return $this->_tests;
     }
     
     /**

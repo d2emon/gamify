@@ -28,11 +28,11 @@ $this->title = 'My Yii Application';
 		        <?php } ?>
 		    </ul>
 		    <?php } ?>
-		    <?php if (count($test->bonuses)) { ?>
+		    <?php if (count($bonuses)) { ?>
 			<h4>Награда:</h4>
 		    <ul>
-		        <?php foreach ($test->bonuses as $bonus) { ?>
-			<li><?= $bonus; ?></li>
+		        <?php foreach ($bonuses as $bonus) { ?>
+			<li><?= $bonus->title; ?></li>
 		        <?php } ?>
 		    </ul>
 		    <?php } ?>
