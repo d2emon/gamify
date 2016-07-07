@@ -11,6 +11,7 @@ use app\models\Item;
 use app\models\Advice;
 use app\models\Campaign;
 use app\modules\task\models\TaskGroup;
+use app\modules\task\models\Project;
 use app\modules\task\models\Bonus;
 
 class SiteController extends Controller
@@ -89,7 +90,7 @@ class SiteController extends Controller
      */
     public function actionQuests($id=100)
     {
-	$campaigns = Campaign::findByProfileId($id);
+	$campaigns = Project::find()->all();
 	return $this->render('quests', [
 	    'campaigns' => $campaigns,
         ]);
