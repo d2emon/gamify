@@ -4,6 +4,7 @@ namespace app\models;
 
 use app\modules\badge\models\Badge;
 use app\modules\task\models\TaskGroup;
+use app\modules\profile\models\Contact;
 
 class Profile extends \yii\base\Object
 {
@@ -122,10 +123,7 @@ class Profile extends \yii\base\Object
      */
     public function getContacts()
     {
-	if(!isset($this->_contacts))
-	{
-	    $this->_contacts = Contact::findByProfileId($this->id);
-	}
+	$this->_contacts = Contact::findAll(['profile_id' => $this->id - 99]);
 	return $this->_contacts;
     }
     

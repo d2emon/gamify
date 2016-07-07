@@ -37,7 +37,7 @@ $this->title = 'My Yii Application';
 			<?php if (count($profile->contacts)) { ?>
 			<ul>
 			<?php foreach ($profile->contacts as $contact) { ?>
-			<li><img src="<?= $contact->image; ?>" /><?= $contact->value; ?></li>
+			<li><img src="/images/contacts/<?= $contact->image; ?>" /><?= $contact->value; ?></li>
 			<?php } ?>
 			</ul>
 			<?php } ?>
