@@ -6,12 +6,12 @@ use Yii;
 use yii\web\Controller;
 use app\models\ContactForm;
 use app\models\Profile;
-use app\models\Level;
 use app\models\Item;
 use app\modules\advice\models\Advice;
 use app\modules\task\models\TaskGroup;
 use app\modules\task\models\Project;
 use app\modules\task\models\Bonus;
+use app\modules\level\models\Level;
 
 class SiteController extends Controller
 {
@@ -128,18 +128,18 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLevels($id=0)
+    public function actionLevels($level_id=0)
     {
-	if($id == 0)
+	if($level_id == 0)
 	{
 	    $profile = Profile::findById(100);
             $level = $profile->score->level;
 	}
 	else
 	{
-	    $level = Level::findById($id);
+	    $level = Level::findOne($level_id);
 	}
-	$levels = Level::findAll();
+	$levels = Level::find()->all();
 	return $this->render('level', [
 	    'level' => $level,
             'levels' => $levels,

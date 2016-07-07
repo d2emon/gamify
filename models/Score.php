@@ -2,6 +2,8 @@
 
 namespace app\models;
 
+use app\modules\level\models\Level;
+
 class Score extends \yii\base\Object
 {
     private $_score;
@@ -10,7 +12,7 @@ class Score extends \yii\base\Object
         '100' => [
             'id' => '100',
 	    'score' => 120,
-	    'level' => 7,
+	    'level' => 9,
 	    'random_shop' => '3 отпуска',
 	],
     ];
@@ -44,7 +46,7 @@ class Score extends \yii\base\Object
     {
 	if(!isset($this->_level))
 	{
-	    $this->_level = Level::findById($this->_score['level']);
+	    $this->_level = Level::findOne($this->_score['level']);
 	}
 	return $this->_level;
     }
