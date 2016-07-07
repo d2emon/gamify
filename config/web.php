@@ -52,6 +52,9 @@ $config = [
         'badge' => [
 	    'class' => 'app\modules\badge\Module',
 	],
+        'advice' => [
+	    'class' => 'app\modules\advice\Module',
+	],
     ],
     'params' => $params,
 ];
