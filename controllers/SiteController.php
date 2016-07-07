@@ -8,8 +8,7 @@ use app\models\ContactForm;
 use app\models\Profile;
 use app\models\Level;
 use app\models\Item;
-use app\models\Advice;
-use app\models\Campaign;
+use app\modules\advice\models\Advice;
 use app\modules\task\models\TaskGroup;
 use app\modules\task\models\Project;
 use app\modules\task\models\Bonus;
@@ -117,7 +116,7 @@ class SiteController extends Controller
     public function actionUserlist($id=100)
     {
 	$profiles = Profile::findAll();
-	$advice = Advice::find();
+	$advice = Advice::find()->orderBy('rand()')->one();
 	return $this->render('userlist', [
 	    'profiles' => $profiles,
             'advice' => $advice,
