@@ -31,7 +31,9 @@ $this->title = 'My Yii Application';
 	                    <td><?= $id; ?></td>
 			    <td><a href="<?= Url::to(['site/profile', 'profile_id' => $profile->user_id]); ?>">
 				<div><?= $profile->fullname; ?></div>
+				<?php if($profile->job) { ?>
 				<div><?= $profile->job->title; ?></div>
+		        	<?php } ?>
 				</a></td>
 			    <td><img src="<?= $profile->avatar; ?>" /></td>
 	                    <td><?= $profile->rating; ?></td>

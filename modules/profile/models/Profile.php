@@ -163,6 +163,7 @@ class Profile extends \yii\db\ActiveRecord
      */
     public function getAvatar()
     {
-	return sprintf("/images/users/%s.jpg", $this->image, $this->user_id);
+	$image = $this->image ? $this->image : '0';
+	return sprintf("/images/users/%s.jpg", $image, $this->user_id);
     }
 }
