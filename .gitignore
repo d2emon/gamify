@@ -26,5 +26,7 @@ composer.lock
 phpunit.phar
 # local phpunit config
 /phpunit.xml
+/tests/codeception.yml
+/tests/codeception/config/config.php
 
 /config/db.php
