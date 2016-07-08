@@ -17,7 +17,7 @@ $this->title = 'My Yii Application';
                     </div>
 		    <div>
 			<div>
-		     	    У вас <span class="score"><?= $profile->score->score; ?> очков</span> вы можете потратить их:
+		     	    У вас <span class="score"><?= $profile->wallet->value; ?> очков</span> вы можете потратить их:
                         </div>
 			<div>
 			    <?php if (count($items)) { ?>

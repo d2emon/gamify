@@ -6,6 +6,8 @@ use app\modules\badge\models\Badge;
 use app\modules\task\models\TaskGroup;
 use app\modules\profile\models\Contact;
 use app\modules\stat\models\Stat;
+use app\modules\shop\models\Wallet;
+use app\modules\level\models\Level;
 
 class Profile extends \yii\base\Object
 {
@@ -32,6 +34,7 @@ class Profile extends \yii\base\Object
 	    'image' => "150/150",
 	    'rating' => 10456,
 	    'tasks' => [ 1, 2],
+	    'level' => 9,
 	    /*
 	    'score' => 120,
 	    'level' => 7,
@@ -161,11 +164,11 @@ class Profile extends \yii\base\Object
      *
      * @return Score
      */
-    public function getScore()
+    public function getWallet()
     {
 	if(!isset($this->_score))
 	{
-	    $this->_score = Score::findByProfileId($this->id);
+	    $this->_score = Wallet::findOne(['profile_id' => $this->id - 99]);
 	}
 	return $this->_score;
     }
@@ -177,7 +180,7 @@ class Profile extends \yii\base\Object
      */
     public function getLevel()
     {
-	return $this->score->level;
+	return Level::findOne($this->profile['level']);
     }
     
     /**

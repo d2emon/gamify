@@ -112,7 +112,7 @@ $this->title = 'My Yii Application';
                     </div>
 		    <div class="row">
             		<div id="scorebox" class="col-lg-4">
-			    <span class="score"><?= $profile->score->score; ?></span>
+			    <span class="score"><?= $profile->wallet->value; ?></span>
                         </div>
 			<div class="col-lg-8">
                             <h5>На них можно купить:</h5>

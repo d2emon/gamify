@@ -77,11 +77,11 @@ class SiteController extends Controller
     public function actionProfile($id=100)
     {
 	$profile = Profile::findById($id);
-        $random_item = ShopItem::randomItem($profile->score->score);
+        $random_item = ShopItem::randomItem($profile->wallet->value);
 	return $this->render('profile', [
 	    'profile' => $profile,
 	    'random_item' => [
-		'count' => (int) ($profile->score->score / $random_item->cost), 
+		'count' => (int) ($profile->wallet->value / $random_item->cost), 
 		'item' => $random_item
 	    ],	
         ]);
@@ -138,7 +138,7 @@ class SiteController extends Controller
 	if($level_id == 0)
 	{
 	    $profile = Profile::findById(100);
-            $level = $profile->score->level;
+            $level = $profile->level;
 	}
 	else
 	{
@@ -159,7 +159,7 @@ class SiteController extends Controller
     public function actionShop()
     {
 	$profile = Profile::findById(100);
-	$items = ShopItem::find()->where(['<=', 'cost', $profile->score->score])->all();
+	$items = ShopItem::find()->where(['<=', 'cost', $profile->wallet->value])->all();
 	return $this->render('score', [
 	    'profile' => $profile,
             'items' => $items,
