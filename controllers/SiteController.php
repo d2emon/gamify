@@ -6,7 +6,7 @@ use Yii;
 use yii\web\Controller;
 use app\models\ContactForm;
 use app\models\Profile;
-use app\models\Item;
+use app\modules\shop\models\ShopItem;
 use app\modules\advice\models\Advice;
 use app\modules\task\models\TaskGroup;
 use app\modules\task\models\Project;
@@ -154,7 +154,7 @@ class SiteController extends Controller
     public function actionShop()
     {
 	$profile = Profile::findById(100);
-	$items = Item::findAll();
+	$items = ShopItem::find()->where(['<=', 'cost', $profile->score->score])->all();
 	return $this->render('score', [
 	    'profile' => $profile,
             'items' => $items,
