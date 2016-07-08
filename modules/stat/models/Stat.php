@@ -44,6 +44,7 @@ class Stat extends \yii\db\ActiveRecord
     {
         return [
             'id' => Yii::t('stat', 'ID'),
+            'profile_id' => Yii::t('stat', 'Profile ID'),
             'title' => Yii::t('stat', 'Title'),
             'image' => Yii::t('stat', 'Image'),
             'value' => Yii::t('stat', 'Value'),

@@ -137,7 +137,7 @@ class Profile extends \yii\base\Object
     {
 	if(!isset($this->_stats))
 	{
-	    $this->_stats = Stat::findAll([1, 2, 3, 4]);
+	    $this->_stats = Stat::findAll(['profile_id' => $this->id - 99]);
 	}
 	return $this->_stats;
     }
