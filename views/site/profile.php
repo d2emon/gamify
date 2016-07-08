@@ -15,8 +15,8 @@ $this->title = 'My Yii Application';
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
 		<a href="<?= Url::to(['dummy/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
-		    <img src="<?= $profile->job->avatar; ?>" alt="<?= $profile->job->workspace; ?>" class="job-avatar" />
-	            <span class="more-button"><?= $profile->job->workspace; ?></span>	
+		    <img src="<?= $profile->job->workspace->avatar; ?>" alt="<?= $profile->job->workspace->title; ?>" class="job-avatar" />
+	            <span class="more-button"><?= $profile->job->workspace->title; ?></span>	
                 </a>
             </div>
             <div id="profile-description" class="col-lg-10">
@@ -45,7 +45,7 @@ $this->title = 'My Yii Application';
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Должность:</td>
-			<td><?= $profile->job->position; ?></td>
+			<td><?= $profile->job->title; ?></td>
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Рабочие обязанности:</td>

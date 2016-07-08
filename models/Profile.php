@@ -8,6 +8,7 @@ use app\modules\profile\models\Contact;
 use app\modules\stat\models\Stat;
 use app\modules\shop\models\Wallet;
 use app\modules\level\models\Level;
+use app\modules\job\models\Job;
 
 class Profile extends \yii\base\Object
 {
@@ -35,6 +36,7 @@ class Profile extends \yii\base\Object
 	    'rating' => 10456,
 	    'tasks' => [ 1, 2],
 	    'level' => 9,
+	    'job_id' => 1,
 	    /*
 	    'score' => 120,
 	    'level' => 7,
@@ -154,7 +156,7 @@ class Profile extends \yii\base\Object
     {
 	if(!isset($this->_job))
 	{
-	    $this->_job = Job::findByProfileId($this->id);
+	    $this->_job = Job::findOne($this->profile['job_id']);
 	}
 	return $this->_job;
     }
