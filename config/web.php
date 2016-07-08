@@ -55,6 +55,9 @@ $config = [
         'level' => [
 	    'class' => 'app\modules\level\Module',
 	],
+        'stat' => [
+	    'class' => 'app\modules\stat\Module',
+	],
         'shop' => [
 	    'class' => 'app\modules\shop\Module',
 	],
