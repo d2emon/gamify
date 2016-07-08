@@ -120,7 +120,7 @@ class SiteController extends Controller
      */
     public function actionUserlist($id=100)
     {
-	$profiles = Profile::findAll();
+	$profiles = Profile::find()->all();
 	$advice = Advice::find()->orderBy('rand()')->one();
 	return $this->render('userlist', [
 	    'profiles' => $profiles,
