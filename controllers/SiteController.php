@@ -6,6 +6,7 @@ use Yii;
 use yii\web\Controller;
 use app\models\ContactForm;
 use app\models\Profile;
+use app\modules\stat\models\Stat;
 use app\modules\shop\models\ShopItem;
 use app\modules\advice\models\Advice;
 use app\modules\task\models\TaskGroup;

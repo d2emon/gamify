@@ -5,6 +5,7 @@ namespace app\models;
 use app\modules\badge\models\Badge;
 use app\modules\task\models\TaskGroup;
 use app\modules\profile\models\Contact;
+use app\modules\stat\models\Stat;
 
 class Profile extends \yii\base\Object
 {
@@ -136,7 +137,7 @@ class Profile extends \yii\base\Object
     {
 	if(!isset($this->_stats))
 	{
-	    $this->_stats = Stat::findByProfileId($this->id);
+	    $this->_stats = Stat::findAll([1, 2, 3, 4]);
 	}
 	return $this->_stats;
     }

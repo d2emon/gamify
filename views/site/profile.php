@@ -130,7 +130,7 @@ $this->title = 'My Yii Application';
 		    <?php if (count($profile->stats)) { ?>
                     <ul>
 		    <?php foreach ($profile->stats as $stat) { ?>
-		    <li><img src="<?= $stat->image; ?>" /> <?= $stat->value; ?> <?= $stat->text; ?></li>
+		    <li><img src="<?= $stat->avatar; ?>" /> <?= $stat->value; ?> <?= $stat->title; ?></li>
 		    <?php } ?>
 		    </ul>
 		    <?php } ?>

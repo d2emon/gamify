@@ -50,4 +50,14 @@ class Stat extends \yii\db\ActiveRecord
             'description' => Yii::t('stat', 'Description'),
         ];
     }
+
+    /**
+     * Forms avatar
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+	return sprintf("/images/stats/%s.jpg", $this->image, $this->id);
+    }
 }
