@@ -52,6 +52,9 @@ $config = [
         'profile' => [
 	    'class' => 'app\modules\profile\Module',
 	],
+        'job' => [
+	    'class' => 'app\modules\job\Module',
+	],
         'level' => [
 	    'class' => 'app\modules\level\Module',
 	],
