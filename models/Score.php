@@ -13,7 +13,7 @@ class Score extends \yii\base\Object
             'id' => '100',
 	    'score' => 120,
 	    'level' => 9,
-	    'random_shop' => '3 отпуска',
+	    // 'random_shop' => '3 отпуска',
 	],
     ];
 
@@ -49,16 +49,6 @@ class Score extends \yii\base\Object
 	    $this->_level = Level::findOne($this->_score['level']);
 	}
 	return $this->_level;
-    }
-
-    /**
-     * Things to buy
-     *
-     * @return string
-     */
-    public function getRandom_shop()
-    {
-	return $this->_score["random_shop"];
     }
 
     /**

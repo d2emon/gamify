@@ -77,8 +77,13 @@ class SiteController extends Controller
     public function actionProfile($id=100)
     {
 	$profile = Profile::findById($id);
+        $random_item = ShopItem::randomItem($profile->score->score);
 	return $this->render('profile', [
 	    'profile' => $profile,
+	    'random_item' => [
+		'count' => (int) ($profile->score->score / $random_item->cost), 
+		'item' => $random_item
+	    ],	
         ]);
     }
 

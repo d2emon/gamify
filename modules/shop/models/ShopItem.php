@@ -60,4 +60,10 @@ class ShopItem extends \yii\db\ActiveRecord
     {
 	return sprintf("/images/shop_items/%s.jpg", $this->image, $this->id);
     }
+
+    public static function randomItem($value)
+    {
+	$item = self::find()->where(['<=', 'cost', $value])->orderBy('rand()')->one();
+	return $item;
+    }
 }

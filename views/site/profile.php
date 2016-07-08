@@ -116,7 +116,7 @@ $this->title = 'My Yii Application';
                         </div>
 			<div class="col-lg-8">
                             <h5>На них можно купить:</h5>
-			    <a href="<?= Url::to(['dummy/buy', 'id' => 100]); ?>" class="buy"><?= $profile->score->random_shop; ?></a> <a href="<?= Url::to(['dummy/shop_random']); ?>">O</a>
+			    <a href="<?= Url::to(['dummy/buy', 'id' => 100]); ?>" class="buy"><?= $random_item['count']; ?> <?= $random_item['item']->title; ?></a> <a href="<?= Url::to(['dummy/shop_random']); ?>">O</a>
                         </div>
                     </div>
                 </div>
