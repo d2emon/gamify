@@ -11,7 +11,7 @@ $this->title = 'My Yii Application';
 
     	<div id="profile-summary" class="row">
             <div id="profile-images" class="col-lg-2">
-		<a href="<?= Url::to(['site/profile', 'id' => $profile->id]); ?>" class="profile-link">
+		<a href="<?= Url::to(['site/profile', 'id' => $profile->user_id]); ?>" class="profile-link">
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
 		<a href="<?= Url::to(['dummy/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
@@ -25,11 +25,11 @@ $this->title = 'My Yii Application';
 		<table>
 		    <tr>
 		        <td class="profile-row">Увлечение:</td>
-			<td><?= $profile->profile["hobby"]; ?></td>
+			<td><?= $profile->hobby; ?></td>
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Образование:</td>
-			<td><?= $profile->profile["education"]; ?></td>
+			<td><?= $profile->education; ?></td>
 		    </tr>
 		    <tr>
 		        <td class="profile-row">Контакты:</td>
@@ -59,7 +59,7 @@ $this->title = 'My Yii Application';
 		<div class="d2-box">
 		    <div class="head">
                         <h2>Бейджи</h2>
-			<a href="<?= Url::to(['/badge/default/index', 'user_id' => $profile->id]); ?>" id="badges" class="more-button more-float">Смотреть все достижения</a>
+			<a href="<?= Url::to(['/badge/default/index', 'user_id' => $profile->user_id]); ?>" id="badges" class="more-button more-float">Смотреть все достижения</a>
                     </div>
 
 		    <?php if (count($profile->badges)) { ?>

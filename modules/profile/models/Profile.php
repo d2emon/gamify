@@ -3,6 +3,12 @@
 namespace app\modules\profile\models;
 
 use Yii;
+use app\modules\job\models\Job;
+use app\modules\badge\models\Badge;
+use app\modules\task\models\TaskGroup;
+use app\modules\level\models\Level;
+use app\modules\shop\models\Wallet;
+use app\modules\stat\models\Stat;
 
 /**
  * This is the model class for table "profile".
@@ -79,9 +85,9 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getJobs()
+    public function getJob()
     {
-        return $this->hasMany(Job::className(), ['profile_id' => 'user_id']);
+        return $this->hasOne(Job::className(), ['profile_id' => 'user_id']);
     }
 
     /**
@@ -95,14 +101,6 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfile2badges()
-    {
-        return $this->hasMany(Profile2badge::className(), ['profile_id' => 'user_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
     public function getBadges()
     {
         return $this->hasMany(Badge::className(), ['id' => 'badge_id'])->viaTable('profile2badge', ['profile_id' => 'user_id']);
@@ -111,17 +109,9 @@ class Profile extends \yii\db\ActiveRecord
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getProfile2level()
+    public function getLevel()
     {
-        return $this->hasOne(Profile2level::className(), ['profile_id' => 'user_id']);
-    }
-
-    /**
-     * @return \yii\db\ActiveQuery
-     */
-    public function getProfile2tasks()
-    {
-        return $this->hasMany(Profile2task::className(), ['profile_id' => 'user_id']);
+        return $this->hasOne(Level::className(), ['id' => 'level_id'])->viaTable('profile2level', ['profile_id' => 'user_id']);
     }
 
     /**
@@ -129,14 +119,50 @@ class Profile extends \yii\db\ActiveRecord
      */
     public function getTasks()
     {
-        return $this->hasMany(Badge::className(), ['id' => 'task_id'])->viaTable('profile2task', ['profile_id' => 'user_id']);
+        return $this->hasMany(TaskGroup::className(), ['id' => 'task_id'])->viaTable('profile2task', ['profile_id' => 'user_id']);
     }
 
     /**
      * @return \yii\db\ActiveQuery
      */
-    public function getWallets()
+    public function getStats()
     {
-        return $this->hasMany(Wallet::className(), ['profile_id' => 'user_id']);
+        return $this->hasMany(Stat::className(), ['profile_id' => 'user_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getWallet()
+    {
+        return $this->hasOne(Wallet::className(), ['profile_id' => 'user_id']);
+    }
+
+    public static function primaryKey()
+    {
+	return ['user_id'];
+    }
+
+    /**
+     * Forms full name
+     * @return string
+     */
+    public function getFullname()
+    {
+        return join(' ', [
+            $this->firstname,
+            $this->middlename,
+            $this->lastname,
+        ]);
+    }
+
+    /**
+     * Forms avatar
+     *
+     * @return string
+     */
+    public function getAvatar()
+    {
+	return sprintf("/images/users/%s.jpg", $this->image, $this->user_id);
     }
 }

@@ -5,7 +5,7 @@ namespace app\controllers;
 use Yii;
 use yii\web\Controller;
 use app\models\ContactForm;
-use app\models\Profile;
+use app\modules\profile\models\Profile;
 use app\modules\shop\models\ShopItem;
 use app\modules\advice\models\Advice;
 use app\modules\task\models\TaskGroup;
@@ -74,9 +74,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionProfile($id=100)
+    public function actionProfile($id=1)
     {
-	$profile = Profile::findById($id);
+	$profile = Profile::findOne($id);
         $random_item = ShopItem::randomItem($profile->wallet->value);
 	return $this->render('profile', [
 	    'profile' => $profile,
@@ -92,7 +92,7 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionQuests($id=100)
+    public function actionQuests($id=1)
     {
 	$campaigns = Project::find()->all();
 	return $this->render('quests', [
@@ -105,11 +105,11 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionTests($id=100)
+    public function actionTests($id=1)
     {
-	$profile = Profile::findById($id);
+	$profile = Profile::findOne($id);
 	return $this->render('tests', [
-	    'tests' => $profile->tests,
+	    'tests' => $profile->tasks,
         ]);
     }
 
