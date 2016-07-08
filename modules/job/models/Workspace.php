@@ -65,12 +65,6 @@ class Workspace extends \yii\db\ActiveRecord
      */
     public function getAvatar()
     {
-	return sprintf("/images/shop_items/%s.jpg", $this->image, $this->id);
-    }
-
-    public static function randomItem($value)
-    {
-	$item = self::find()->where(['<=', 'cost', $value])->orderBy('rand()')->one();
-	return $item;
+	return sprintf("/images/workspaces/%s.jpg", $this->image, $this->id);
     }
 }
