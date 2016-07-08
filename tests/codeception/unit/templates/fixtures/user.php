@@ -1,7 +1,7 @@
 <?php
 return [
-    'username' => substr($faker->unique()->userName, 0, 16),
-    'password' => $faker->password,
+    'username' => ($index == 1) ? 'admin' : substr($faker->unique()->userName, 0, 16),
+    'password' => ($index == 1) ? 'admin' : $faker->password,
     'accessToken' => $faker->md5,
 ];
 
