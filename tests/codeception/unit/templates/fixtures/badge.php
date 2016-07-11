@@ -1,5 +1,5 @@
 <?php
-$image = $faker->optional()->image('web/images/advices', 150, 150, false);
+$image = $faker->optional()->image('web/images/badge', 150, 150, false);
 if($image)
 {
     $filename = $faker->randomNumber(6);
