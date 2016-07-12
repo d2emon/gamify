@@ -11,7 +11,7 @@ else
 }
 
 return [
-    'title' => $faker->sentence,
+    'title' => $faker->word,
     'description' => $faker->realText,
     'image' => $filename,
 ];
