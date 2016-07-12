@@ -56,6 +56,7 @@ class Badge extends \yii\db\ActiveRecord
      */
     public function getAvatar()
     {
-	return sprintf("%s.jpg", $this->image, $this->id);
+	$image = $this->image ? $this->image : '0';
+	return sprintf("%s.jpg", $image);
     }
 }
