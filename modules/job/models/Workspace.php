@@ -65,6 +65,7 @@ class Workspace extends \yii\db\ActiveRecord
      */
     public function getAvatar()
     {
-	return sprintf("/images/workspaces/%s.jpg", $this->image, $this->id);
+	$image = $this->image ? $this->image : '0';
+	return sprintf("/images/workspaces/%s.jpg", $image, $this->id);
     }
 }
