@@ -133,11 +133,11 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionLevels($level_id=0)
+    public function actionLevels($id=1, $level_id=0)
     {
 	if($level_id == 0)
 	{
-	    $profile = Profile::findById(100);
+	    $profile = Profile::findOne($id);
             $level = $profile->level;
 	}
 	else
