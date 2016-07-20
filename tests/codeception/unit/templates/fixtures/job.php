@@ -11,8 +11,8 @@ else
 }
 
 return [
-    'profile_id' => $faker->unique()->numberBetween(1, 100),
-    'workspace_id' => $faker->numberBetween(1, 50),
+    'profile_id' => $index + 1, //$faker->unique()->numberBetween(1, 100),
+    'workspace_id' => $faker->numberBetween(1, 10),
     'title' => $faker->sentence,
     'responsibilities' => $faker->realText,
     'image' => $filename,

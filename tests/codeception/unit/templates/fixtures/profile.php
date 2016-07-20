@@ -11,7 +11,7 @@ else
 }
 
 return [
-    'user_id' => $index,
+    'user_id' => $index + 1,
     'firstname' => $faker->firstName,
     'middlename' => $faker->optional()->firstNameMale,
     'lastname' => $faker->optional()->lastName,

@@ -1,5 +1,5 @@
 <?php
-/*
+
 $image = $faker->optional()->image('web/images/levels', 40, 40, false);
 if($image)
 {
@@ -10,12 +10,12 @@ else
 {
     $filename = '';
 }
- */
+
 
 return [
     'title' => $faker->sentence,
     'description' => $faker->realText,
-    'image' => $index, // $filename,
+    'image' => $filename,
     'bonus_score' => $faker->randomNumber(),
 ];
 
