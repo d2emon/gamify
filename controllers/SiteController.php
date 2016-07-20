@@ -156,9 +156,9 @@ class SiteController extends Controller
      *
      * @return string
      */
-    public function actionShop()
+    public function actionShop($id=1)
     {
-	$profile = Profile::findById(100);
+	$profile = Profile::findOne($id);
 	$items = ShopItem::find()->where(['<=', 'cost', $profile->wallet->value])->all();
 	return $this->render('score', [
 	    'profile' => $profile,
