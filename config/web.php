@@ -5,7 +5,9 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
-    'bootstrap' => ['log'],
+    'bootstrap' => [
+	'log',
+    ],
     'components' => [
         'request' => [
             // !!! insert a secret key in the following (if it is empty) - this is required by cookie validation
@@ -15,7 +17,7 @@ $config = [
             'class' => 'yii\caching\FileCache',
         ],
         'user' => [
-            'identityClass' => 'app\modules\user\models\User',
+            'identityClass' => 'd2emon\user\models\User',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
@@ -44,10 +46,18 @@ $config = [
             'rules' => [
             ],
         ],
+	'i18n' => [
+	    'translations' => [
+		'*' => [
+	            'class' => 'yii\i18n\PhpMessageSource',
+		    // 'basePath' => '@app/messages',
+		],
+	    ],
+	],
     ],
     'modules' => [
         'user' => [
-	    'class' => 'app\modules\user\Module',
+	    'class' => 'd2emon\user\Module',
 	],
         'profile' => [
 	    'class' => 'app\modules\profile\Module',
