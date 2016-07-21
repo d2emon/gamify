@@ -65,7 +65,7 @@ AppAsset::register($this);
     <div class="container">
         <?php 
         $f = (\Yii::$app->session->hasFlash('advice')) ? (time() - \Yii::$app->session->getFlash('advice')) : time();
-        if ($f > 60) {
+        if ($f > 1200) {
         ?>
 	<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
