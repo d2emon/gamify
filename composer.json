@@ -20,6 +20,10 @@
         },
         {
             "type": "git",
+	          "url": "ssh://git@github.com/d2emon/yii2-advice.git"
+        },
+        {
+            "type": "git",
 	          "url": "ssh://git@bitbucket.org/uxappetite/yii2-image.git"
         }
     ],
@@ -39,6 +43,7 @@
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*",
         "d2emon/dummyuser": "*",
+        "d2emon/yii2-advice": "*",
         "uxappetite/yii2-image": "*"
     },
     "config": {

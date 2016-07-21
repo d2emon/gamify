@@ -5,5 +5,5 @@ use yii\test\ActiveFixture;
 
 class AdviceFixture extends ActiveFixture
 {
-     public $modelClass = 'app\modules\advice\models\Advice';
+     public $modelClass = 'd2emon\advice\models\Advice';
 }

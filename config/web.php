@@ -78,7 +78,7 @@ $config = [
 	    'class' => 'app\modules\badge\Module',
 	],
         'advice' => [
-	    'class' => 'app\modules\advice\Module',
+	    'class' => 'd2emon\advice\Module',
 	],
     ],
     'params' => $params,
