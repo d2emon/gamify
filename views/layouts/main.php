@@ -8,7 +8,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
-use d2emon\advice\models\Advice;
+use d2emon\advice\components\AdviceWidget;
 
 AppAsset::register($this);
 ?>
@@ -65,12 +65,9 @@ AppAsset::register($this);
     <div class="container">
 	<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	    <?php $advice = Advice::find()->orderBy('rand()')->one(); ?>
             <h1>Совет</h1>
 	    <div>
-            <?= $advice->title ? '<h1>'.$advice->title.'</h1>' : ''; ?>
-	    <?= $advice->avatar ? Html::img($advice->avatar, ['align' => 'left']).' ' : ''; ?>
-	    <?= nl2br($advice->description); ?>
+            <?= AdviceWidget::widget(); ?>
             </div>
         </div>
         <?= Breadcrumbs::widget([

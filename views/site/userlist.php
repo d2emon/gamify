@@ -1,6 +1,7 @@
 <?php
 use yii\helpers\Url;
 use yii\helpers\Html;
+use d2emon\advice\components\AdviceWidget;
 
 /* @var $this yii\web\View */
 
@@ -47,9 +48,7 @@ $this->title = 'My Yii Application';
             <div class="col-lg-6">
                 <h1>Совет</h1>
 		<div>
-                <?= $advice->title ? '<h1>'.$advice->title.'</h1>' : ''; ?>
-	        <?= $advice->avatar ? Html::img('/images/advices/'.$advice->avatar, ['align' => 'left']).' ' : ''; ?>
-		<?= nl2br($advice->description); ?>
+            	<?= AdviceWidget::widget(); ?>
 		</div>
             </div>
     	</div>

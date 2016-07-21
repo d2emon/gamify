@@ -7,7 +7,6 @@ use yii\web\Controller;
 use app\models\ContactForm;
 use app\modules\profile\models\Profile;
 use app\modules\shop\models\ShopItem;
-use d2emon\advice\models\Advice;
 use app\modules\task\models\TaskGroup;
 use app\modules\task\models\Project;
 use app\modules\task\models\Bonus;
@@ -121,10 +120,8 @@ class SiteController extends Controller
     public function actionUserlist($id=100)
     {
 	$profiles = Profile::find()->all();
-	$advice = Advice::find()->orderBy('rand()')->one();
 	return $this->render('userlist', [
 	    'profiles' => $profiles,
-            'advice' => $advice,
         ]);
     }
 
