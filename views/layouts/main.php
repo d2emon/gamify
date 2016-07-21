@@ -63,6 +63,10 @@ AppAsset::register($this);
     ?>
 
     <div class="container">
+        <?php 
+        $f = (\Yii::$app->session->hasFlash('advice')) ? (time() - \Yii::$app->session->getFlash('advice')) : time();
+        if ($f > 60) {
+        ?>
 	<div class="alert alert-success alert-dismissible" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
             <h1>Совет</h1>
@@ -70,6 +74,9 @@ AppAsset::register($this);
             <?= AdviceWidget::widget(); ?>
             </div>
         </div>
+	<?php 
+            \Yii::$app->session->setFlash('advice', time()); 
+        } ?>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
