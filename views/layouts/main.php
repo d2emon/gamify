@@ -75,8 +75,9 @@ AppAsset::register($this);
             </div>
         </div>
 	<?php 
-            \Yii::$app->session->setFlash('advice', time()); 
-        } ?>
+	}
+    	\Yii::$app->session->setFlash('advice', time()); 
+        ?>
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
         ]) ?>
