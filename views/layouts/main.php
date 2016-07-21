@@ -69,7 +69,7 @@ AppAsset::register($this);
             <h1>Совет</h1>
 	    <div>
             <?= $advice->title ? '<h1>'.$advice->title.'</h1>' : ''; ?>
-	    <?= $advice->avatar ? Html::img('/images/advices/'.$advice->avatar, ['align' => 'left']).' ' : ''; ?>
+	    <?= $advice->avatar ? Html::img($advice->avatar, ['align' => 'left']).' ' : ''; ?>
 	    <?= nl2br($advice->description); ?>
             </div>
         </div>
