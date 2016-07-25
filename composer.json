@@ -43,8 +43,7 @@
         "yiisoft/yii2-gii": "*",
         "yiisoft/yii2-faker": "*",
         "d2emon/dummyuser": "*",
-        "d2emon/yii2-advice": "*",
-        "uxappetite/yii2-image": "*"
+        "d2emon/yii2-advice": "*"
     },
     "config": {
         "process-timeout": 1800
