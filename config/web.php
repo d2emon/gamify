@@ -5,6 +5,10 @@ $params = require(__DIR__ . '/params.php');
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
+    'aliases' => [
+	'@uploads' => 'uploads',
+        '@advices' => 'images/advices',
+    ],
     'bootstrap' => [
 	'log',
     ],
@@ -79,6 +83,18 @@ $config = [
 	],
         'advice' => [
 	    'class' => 'd2emon\advice\Module',
+	],
+	'image' => [
+	    'class' => 'uxappetite\yii2image\Module',
+	    'groups' => [
+		'advice' => [
+		    'path' => '@advices/',
+		    'default' => 'default',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+	    ],
 	],
     ],
     'params' => $params,

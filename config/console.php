@@ -8,6 +8,9 @@ $db = require(__DIR__ . '/db.php');
 $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
+    'aliases' => [
+        '@advices' => 'web/images/advices',
+    ],
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
     'components' => [
@@ -23,6 +26,23 @@ $config = [
             ],
         ],
         'db' => $db,
+    ],
+    'modules' => [
+        'advice' => [
+	    'class' => 'd2emon\advice\Module',
+	],
+	'image' => [
+	    'class' => 'uxappetite\yii2image\Module',
+	    'groups' => [
+		'advice' => [
+		    'path' => '@advices/',
+		    'default' => 'default',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+	    ],
+	],
     ],
     'params' => $params,
     'controllerMap' => [
