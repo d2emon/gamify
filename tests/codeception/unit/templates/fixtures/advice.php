@@ -1,9 +1,11 @@
 <?php
-$image = $faker->optional()->image('web/images/advices', 150, 150, false);
+$image = $faker->optional()->image('web/images/advices', 420, 340, false);
 if($image)
 {
-    $filename = $faker->randomNumber(6);
-    rename($image, sprintf("web/images/advices/%s.jpg", $filename));
+    $group = Yii::$app->getModule('advice')->imageGroup;
+    $filename = Yii::$app->security->generateRandomString(6);
+    rename($image, $group->getRaw_filename($filename));
+    $group->makeThumbs($filename);
 }
 else
 {
