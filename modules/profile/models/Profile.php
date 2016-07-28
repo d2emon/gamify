@@ -3,7 +3,7 @@
 namespace app\modules\profile\models;
 
 use Yii;
-use app\modules\job\models\Job;
+use d2emon\workspace\models\Job;
 use app\modules\badge\models\Badge;
 use app\modules\task\models\TaskGroup;
 use app\modules\level\models\Level;

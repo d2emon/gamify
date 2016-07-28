@@ -8,6 +8,8 @@ $config = [
     'aliases' => [
 	'@uploads' => 'uploads',
         '@advices' => 'images/advices',
+        '@workspaces' => 'images/workspaces',
+        '@jobs' => 'images/jobs',
     ],
     'bootstrap' => [
 	'log',
@@ -84,12 +86,39 @@ $config = [
         'advice' => [
 	    'class' => 'd2emon\advice\Module',
 	],
+        'workspace' => [
+	    'class' => 'd2emon\workspace\Module',
+	],
 	'image' => [
 	    'class' => 'uxappetite\yii2image\Module',
 	    'groups' => [
 		'advice' => [
 		    'path' => '@advices/',
-		    'default' => 'default',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'workspace' => [
+		    'path' => '@workspaces/',
+		    'suffixes' => [
+		        '_m' => 150,
+		        '_s' =>  64,
+		    ],
+		],
+		'job' => [
+		    'path' => '@jobs/',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'project' => [
+		    'path' => '@advices/',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'task' => [
+		    'path' => '@advices/',
 		    'suffixes' => [
 		        '_s' => 64,
 		    ],

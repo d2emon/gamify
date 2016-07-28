@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use uxappetite\yii2image\components\ThumbWidget;
 
 /* @var $this yii\web\View */
 
@@ -15,7 +16,7 @@ $this->title = 'My Yii Application';
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
 		<a href="<?= Url::to(['dummy/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
-		    <img src="<?= $profile->job->workspace->avatar; ?>" alt="<?= $profile->job->workspace->title; ?>" class="job-avatar" />
+		    <img src="<?= $profile->job->workspace->getThumb('_m'); ?>" alt="<?= $profile->job->workspace->title; ?>" class="job-avatar" />
 	            <span class="more-button"><?= $profile->job->workspace->title; ?></span>	
                 </a>
             </div>
