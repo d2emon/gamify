@@ -104,12 +104,14 @@ $config = [
 		        '_m' => 150,
 		        '_s' =>  64,
 		    ],
+		    'default' => 'default',
 		],
 		'job' => [
 		    'path' => '@jobs/',
 		    'suffixes' => [
 		        '_s' => 64,
 		    ],
+		    'default' => '',
 		],
 		'project' => [
 		    'path' => '@advices/',

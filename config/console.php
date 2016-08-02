@@ -9,7 +9,10 @@ $config = [
     'id' => 'basic-console',
     'basePath' => dirname(__DIR__),
     'aliases' => [
-        '@advices' => 'web/images/advices',
+	'@uploads'    => 'web/uploads',
+        '@advices'    => 'web/images/advices',
+        '@workspaces' => 'web/images/workspaces',
+        '@jobs'       => 'web/images/jobs',
     ],
     'bootstrap' => ['log'],
     'controllerNamespace' => 'app\commands',
@@ -37,6 +40,31 @@ $config = [
 		'advice' => [
 		    'path' => '@advices/',
 		    'default' => 'default',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'workspace' => [
+		    'path' => '@workspaces/',
+		    'suffixes' => [
+		        '_m' => 150,
+		        '_s' =>  64,
+		    ],
+		],
+		'job' => [
+		    'path' => '@jobs/',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'project' => [
+		    'path' => '@advices/',
+		    'suffixes' => [
+		        '_s' => 64,
+		    ],
+		],
+		'task' => [
+		    'path' => '@advices/',
 		    'suffixes' => [
 		        '_s' => 64,
 		    ],

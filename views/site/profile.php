@@ -15,7 +15,7 @@ $this->title = 'My Yii Application';
 		<a href="<?= Url::to(['site/profile', 'id' => $profile->user_id]); ?>" class="profile-link">
 		    <img src="<?= $profile->avatar; ?>" alt="<?=$profile->fullname; ?>" class="user-avatar" />
                 </a>
-		<a href="<?= Url::to(['dummy/workspace', 'id' => $profile->job->id]); ?>" class="job-link">
+		<a href="<?= Url::to(['/workspace/default/view', 'id' => $profile->job->workspace_id]); ?>" class="job-link">
 		    <img src="<?= $profile->job->workspace->getThumb('_m'); ?>" alt="<?= $profile->job->workspace->title; ?>" class="job-avatar" />
 	            <span class="more-button"><?= $profile->job->workspace->title; ?></span>	
                 </a>
