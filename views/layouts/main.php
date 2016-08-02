@@ -43,9 +43,15 @@ AppAsset::register($this);
             ['label' => 'Profile', 'url' => ['/site/profile']],
             ['label' => 'Quests', 'url' => ['/site/quests']],
             ['label' => 'Tests', 'url' => ['/site/tests']],
-            ['label' => 'Users', 'url' => ['/user']],
-            ['label' => 'Advices', 'url' => ['/advice']],
-            ['label' => 'Workspaces', 'url' => ['/workspace']],
+	    [
+	        'label' => 'Admin', 
+		'items' => [
+                    ['label' => 'Users', 'url' => ['/user']],
+                    ['label' => 'Advices', 'url' => ['/advice']],
+                    ['label' => 'Workspaces', 'url' => ['/workspace']],
+                    ['label' => 'Jobs', 'url' => ['/workspace/job']],
+	        ],
+            ],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/user/default/login']]
             ) : (
