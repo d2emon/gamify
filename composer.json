@@ -25,6 +25,16 @@
         {
             "type": "git",
 	          "url": "ssh://git@github.com/d2emon/yii2-workspaces.git"
+        },
+        {
+            "name": "uxappetite/yii2-image",
+            "type": "vcs",
+	          "url": "git@bitbucket.org:uxappetite/yii2-image.git"
+        },
+        {
+            "name": "d2emon/trcards",
+            "type": "vcs",
+	          "url": "http://github.com/d2emon/trcards"
         }
     ],
     "require": {
